@@ -1,14 +1,20 @@
-/* src/components/Background.css */
 .background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(125deg, #3D3935, #2A2723, #504A45);
     background-size: 200% 200%;
     animation: gradientMovement 15s ease infinite;
     z-index: -2;
+  }
+  
+  .background.dark {
+    background: linear-gradient(125deg, #3D3935, #2A2723, #504A45);
+  }
+  
+  .background.light {
+    background: linear-gradient(125deg, #E6E3Df, #B8B2AA, #F3F0EC);
   }
   
   .grid {
@@ -17,11 +23,21 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: -1;
+  }
+  
+  .dark-theme .grid {
     background-image: 
       linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 32px 32px;
-    z-index: -1;
+  }
+  
+  .light-theme .grid {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
   
   @keyframes gradientMovement {
@@ -33,5 +49,17 @@
     }
     100% {
       background-position: 0% 50%;
+    }
+  }
+  
+  /* Page entrance animation */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
     }
   }

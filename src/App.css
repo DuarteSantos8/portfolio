@@ -1,14 +1,29 @@
-/* src/App.css */
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  color: white;
   overflow-x: hidden;
+  transition: color 0.3s ease;
+}
+
+.dark-theme {
+  color: #E6E3Df;
+}
+
+.light-theme {
+  color: #3D3935;
 }
 
 .app {
   min-height: 100vh;
   width: 100%;
   position: relative;
+}
+
+/* Apply entrance animation to child elements */
+.app > * {
+  animation-fill-mode: both;
+  animation-duration: 0.8s;
+  animation-timing-function: ease;
+  animation-delay: calc(var(--animation-order, 0) * 0.1s);
 }
