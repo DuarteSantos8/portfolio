@@ -1,0 +1,60 @@
+/* src/components/HeroSection.css */
+.hero-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .title {
+    font-size: 4rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-section {
+    margin-top: 3rem;
+  }
+  
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .arrow {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .social-link {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-link:hover {
+    opacity: 1;
+  }
