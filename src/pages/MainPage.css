@@ -1,0 +1,120 @@
+.hero-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+  animation: slideIn 0.8s ease forwards;
+}
+
+.dark-theme .title {
+  color: #E6E3Df;
+}
+
+.light-theme .title {
+  color: #3D3935;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+  animation: slideIn 1s ease forwards;
+}
+
+.dark-theme .description {
+  color: #E6E3Df;
+}
+
+.light-theme .description {
+  color: #3D3935;
+}
+
+.cta-section {
+  margin-top: 3rem;
+  animation: slideIn 1.2s ease forwards;
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border-radius: 4px;
+}
+
+.cta-link:hover {
+  transform: translateX(8px) scale(1.05);
+}
+
+.dark-theme .cta-link {
+  color: #E6E3Df;
+}
+
+.light-theme .cta-link {
+  color: #3D3935;
+}
+
+.cta-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  animation: slideIn 1.4s ease forwards;
+}
+
+.social-link {
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+}
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.15);
+  opacity: 1;
+}
+
+.dark-theme .social-link {
+  color: #E6E3Df;
+}
+
+.light-theme .social-link {
+  color: #3D3935;
+}
+
+/* Add this to your existing MainPage.css */
+.typing-cursor {
+  animation: blink 0.7s infinite;
+  font-weight: 400;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}

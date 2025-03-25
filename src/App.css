@@ -1,17 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Light Theme Colors */
+  --color-text-light: #3D3935;
+  --color-background-light: #FFFFFF;
+  
+  /* Dark Theme Colors */
+  --color-text-dark: #E6E3Df;
+  --color-background-dark: #121212;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  transition: 
+    color 0.3s ease, 
+    background-color 0.3s ease;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Light Theme */
+.light-theme {
+  color: var(--color-text-light);
+  background-color: var(--color-background-light);
+}
+
+/* Dark Theme */
+.dark-theme {
+  color: var(--color-text-dark);
+  background-color: var(--color-background-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+a {
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  color: var(--color-primary);
   transition: color 0.3s ease;
 }
 
-.dark-theme {
-  color: #E6E3Df;
-}
-
-.light-theme {
-  color: #3D3935;
+a:hover {
+  color: var(--color-secondary);
 }
 
 .app {
@@ -20,10 +62,43 @@ body {
   position: relative;
 }
 
-/* Apply entrance animation to child elements */
+/* Staggered Animation for App Children */
 .app > * {
   animation-fill-mode: both;
   animation-duration: 0.8s;
   animation-timing-function: ease;
   animation-delay: calc(var(--animation-order, 0) * 0.1s);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+  background: var(--color-background-dark);
 }

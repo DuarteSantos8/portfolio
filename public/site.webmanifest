@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "short_name": "Portfolio",
+  "name": "Duarte Santos Porrfolio",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
