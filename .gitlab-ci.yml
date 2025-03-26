@@ -1,0 +1,16 @@
+stages:
+- deploy
+
+variables:
+  DEPLOY_DIR: "/var/www/duarte-portfolio"
+  GIT_REPO: "git@git.sunrise-avengers.ch:appli/duarte-portfolio.git"
+  SERVER: "nodejs.lab.local"
+
+deploy:
+  stage: deploy
+
+  script:
+  - sudo ssh $SERVER "./gitlab-deploy.sh $GIT_REPO $DEPLOY_DIR"
+
+  only:
+  - main
