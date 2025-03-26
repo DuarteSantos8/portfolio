@@ -4,7 +4,7 @@
 usage() {
     echo "Usage: $0 <git_repo> <deploy_dir>"
     echo "  git_repo   - Git repository URL (e.g., git@sunrise-avengers.ch/appli/duarte-portfolio.git)"
-    echo "  deploy_dir - Directory where the repository will be deployed (e.g., /var/www/)"
+    echo "  deploy_dir - Directory where the repository will be deployed (e.g., /var/www/duarte-portfolio)"
     exit 1
 }
 
