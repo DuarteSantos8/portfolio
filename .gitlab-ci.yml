@@ -13,4 +13,4 @@ deploy:
   - sudo ssh $SERVER "./gitlab-deploy.sh $GIT_REPO $DEPLOY_DIR"
 
   only:
-  - master
+  - main
