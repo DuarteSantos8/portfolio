@@ -4,6 +4,8 @@ import { LuSun, LuMoon } from "react-icons/lu";
 import { ThemeContext } from '../context/ThemeContext';
 import MobileMenu from './MobileMenu';
 import './Header.css';
+import TypingText from './TypingText';
+
 
 const Header = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
@@ -16,9 +18,9 @@ const Header = () => {
         </Link>
       </div>
       <nav className="nav">
-        <Link to="/#about">About</Link>
+        <Link to="/about">About</Link>
         <Link to="/projects">Projects</Link>
-        <Link to="/#contact">Contact</Link>
+        <Link to="/contact">Contact</Link>
         <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {isDarkMode ? <LuSun size={30}/> : <LuMoon size={30}/>}
         </button>

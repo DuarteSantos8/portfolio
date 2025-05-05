@@ -7,19 +7,7 @@
   --text-secondary: #A0A0A0;
   --border-color: rgba(230, 227, 223, 0.1);
   --hover-color: rgba(230, 227, 223, 0.05);
-  --accent-color: #3498db;
-}
-
-/* Global Theme Variables */
-:root {
-  /* Dark Theme (Default) */
-  --bg-primary: #121212;
-  --bg-secondary: #1E1E1E;
-  --text-primary: #E6E3Df;
-  --text-secondary: #A0A0A0;
-  --border-color: rgba(230, 227, 223, 0.1);
-  --hover-color: rgba(230, 227, 223, 0.05);
-  --accent-color: #3498db;
+  --accent-color: #504A45;
 }
 
 /* Light Theme */
@@ -30,7 +18,7 @@
   --text-secondary: #666666;
   --border-color: rgba(61, 57, 53, 0.1);
   --hover-color: rgba(61, 57, 53, 0.05);
-  --accent-color: #2171a3;
+  --accent-color: #2A2723;
 }
 
 /* Rest of the previous CSS remains the same... */
@@ -134,7 +122,7 @@ body {
 /* Projects Header */
 .projects-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-bottom: 3rem;
 }

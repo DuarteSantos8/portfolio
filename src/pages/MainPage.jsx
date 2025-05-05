@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import './MainPage.css';
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaSpotify } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa";
 import '@fontsource/roboto-mono';
 
 const HeroSection = () => {
@@ -67,6 +67,17 @@ const HeroSection = () => {
         return () => clearTimeout(timer);
     }, [text, isDeleting, currentPhrase, phrases]);
 
+    const getAge = () => {
+        const birthDate = new Date(2007, 9, 28);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+        }
+        return age;
+      };
+
     return (
         <section className="hero-section">
             <h1 className="title">
@@ -74,13 +85,10 @@ const HeroSection = () => {
                 <span className="typing-cursor">|</span>
             </h1>
             <p className="description">
-                As a passionate software developer, I transform complex problems into elegant digital solutions. 
-                My journey is driven by curiosity, innovation, and a relentless pursuit of clean, efficient code.
+            I'm a passionate software developer at Sunrise and currently {getAge()} years old. Using JavaScript React, Python and many more languages I build modern web apps that turn complex ideas into clean, user-friendly experiences.
             </p>
             <p className="description">
-                With a keen eye for detail and a love for cutting-edge technologies, I craft experiences 
-                that bridge creativity and functionality. Each project is an opportunity to learn, grow, 
-                and push the boundaries of what's possible in the digital landscape.
+            Driven by curiosity and a love for clean, efficient code, I’m always exploring new technologies. For me, every project is a chance to grow, learn something new, and push the limits of what’s possible with code.    
             </p>
 
             <div className="cta-section">
@@ -106,12 +114,12 @@ const HeroSection = () => {
                         <FaInstagram size={35} />
                     </a>
                     <a
-                        href="https://open.spotify.com/playlist/1Cuo8lW5miDPTydylVXCjx"
+                        href="mailto:duarte.lavourasreissantos@sunrise.net"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="social-link"
                     >
-                        <FaSpotify size={35}/>
+                        <FaEnvelope size={35}/>
                     </a>
                 </div>
             </div>

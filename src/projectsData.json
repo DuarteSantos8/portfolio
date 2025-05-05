@@ -1,0 +1,43 @@
+[
+    {
+      "name": "MediStock",
+      "description": "An easy-to-use reservation tool for Sunrise's Multi Media Team to manage and book equipment efficiently.",
+      "technologies": ["JavaScript", "Python", "HTML", "CSS", "React", "Flask", "MySQL", "Firebase"],
+      "githubLink": "https://git.sunrise-avengers.ch/appli/medistock-frontend",
+      "demoLink": "https://medistock.sunrise-avengers.ch/",
+      "category": "Professional",
+      "date": "August 2024 - Present",
+      "image": null
+    },
+    {
+      "name": "SalesChamp",
+      "description": "A simple points-tracking dashboard for Sunrise sales agents to view and track their performance in real time. ",
+      "technologies": ["JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap", "Qlik"],
+      "githubLink": "https://git.sunrise-avengers.ch/appli/saleschamp-frontend",
+      "demoLink": "https://saleschamp.sunrise-avengers.ch/",
+      "category": "Professional",
+      "date": "Jan 2025 - Present",
+      "image": null
+    },
+    {
+      "name": "Handsign Translator",
+      "description": "A real-time application that translates hand gestures into text using computer vision and machine learning.",
+      "technologies": ["Python", "OpenCV", "virtualenv", "CVZone", "NumPy", "MediaPipe"],
+      "githubLink": "https://github.com/DuarteSantos8/Hand-recognition",
+      "demoLink": "",
+      "category": "Personal",
+      "date": "March 2025",
+      "image": null
+    },
+    {
+      "name": "Raspberry Pi Camera (Motion Detection)",
+      "description": "In my free time, I enjoy building projects with my Raspberry Pi 4. In this project, I connected a camera and a motion sensor to the Raspberry Pi. When movement is detected, the camera takes a photo and sends it to me via Telegram using a bot. I also added a VPN connection to access the Raspberry Pi remotely with OpenVPN.",
+      "technologies": ["Python", "Raspberry Pi OS", "Raspberry Pi Camera Module", "PIR Motion Sensor", "RPi.GPIO", "Telegram Bot API", "OpenVPN"],
+      "githubLink": "https://github.com/DuarteSantos8",
+      "demoLink": "",
+      "category": "Personal",
+      "date": "April 2025",
+      "image": null
+    }    
+  ]
+  

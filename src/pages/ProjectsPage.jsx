@@ -1,8 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { FaGitlab, FaGithub, FaExternalLinkAlt, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs } from 'react-icons/fa';
-import { SiFlask, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe } from 'react-icons/si';
+import { FaGitlab, FaGithub, FaExternalLinkAlt, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs, FaRaspberryPi, FaCamera, FaNetworkWired, FaTelegram} from 'react-icons/fa';
+import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe } from 'react-icons/si';
+import { MdSensors } from "react-icons/md";
 import './ProjectsPage.css';
+import projectsData from '../projectsData.json'; // Import the JSON data
 
 const TechnologyIcons = {
   'React': FaReact,
@@ -16,58 +18,39 @@ const TechnologyIcons = {
   'Firebase': SiFirebase,
   'Bootstrap': SiBootstrap,
   'Qlik': SiQlik,
-  'Python': FaPython,
   'OpenCV': SiOpencv,
   'virtualenv': FaTerminal,
   'CVZone': FaCode,
   'NumPy': SiNumpy,
   'MediaPipe': SiMediapipe,
+  'Raspberry Pi OS': FaRaspberryPi,
+  'Raspberry Pi Camera Module': FaCamera,
+  'PIR Motion Sensor': MdSensors,
+  'RPi.GPIO':FaNetworkWired,
+  'Telegram Bot API':FaTelegram,
+  'OpenVPN': SiOpenvpn
+
+
 };
 
 const ProjectsPage = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [activeCategory, setActiveCategory] = useState('All');
-
-  const projects = [
-    {
-      name: 'MediStock',
-      description: "An easy-to-use reservation tool for Sunrise's Multi Media Team to manage and book equipment efficiently.",
-      technologies: ['JavaScript', 'Python', 'HTML', 'CSS', 'React', 'Flask', 'MySQL', 'Firebase'],
-      githubLink: 'https://github.com/yourusername/medistock',
-      demoLink: 'https://medistock.sunrise-avengers.ch/',
-      category: 'Professional',
-      date: 'August 2024 - Present',
-      image: null
-    },
-    {
-      name: 'SalesChamp',
-      description: 'A simple points-tracking dashboard for Sunrise sales agents to view and track their performance in real time.',
-      technologies: ['JavaScript', 'HTML', 'CSS', 'Vue.js', 'Bootstrap', 'Qlik'],
-      githubLink: 'https://git.sunrise-avengers.ch/appli/saleschamp',
-      demoLink: 'https://saleschamp.sunrise-avengers.ch/',
-      category: 'Professional',
-      date: 'Jan 2025 - Present',
-      image: null
-    },
-    {
-      name: 'Handsign Translator',
-      description: 'A real-time application that translates hand gestures into text using computer vision and machine learning.',
-      technologies: ['Python', 'OpenCV', 'virtualenv', 'CVZone', 'NumPy', 'MediaPipe'],
-      githubLink: 'https://github.com/yourusername/portfolio',
-      demoLink: 'https://yourportfolio.com',
-      category: 'Personal',
-      date: 'March 2024 – Present',
-      image: null
-    }
-  ];
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
   const categories = ['All', 'Professional', 'Personal'];
 
-  const filteredProjects = activeCategory === 'All'
-    ? projects
-    : projects.filter(project => project.category === activeCategory);
+  useEffect(() => {
+    // Filter projects based on active category
+    const filtered = activeCategory === 'All' 
+      ? projectsData 
+      : projectsData.filter(project => project.category === activeCategory);
+    
+    setFilteredProjects(filtered);
 
-  React.useEffect(() => {
+  }, [activeCategory]);
+
+  useEffect(() => {
     if (isDarkMode !== undefined) { }
     if (toggleTheme !== undefined) { }
   }, [isDarkMode, toggleTheme]);
@@ -91,7 +74,8 @@ const ProjectsPage = () => {
           ))}
         </div>
 
-        <div className="projects-grid">
+        {/* Add a key to force re-render */}
+        <div className="projects-grid" key={activeCategory}>
           {filteredProjects.map((project, index) => (
             <div
               key={project.name}
