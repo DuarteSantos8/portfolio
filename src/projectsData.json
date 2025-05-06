@@ -7,11 +7,7 @@
       "demoLink": "https://medistock.sunrise-avengers.ch/",
       "category": "Professional",
       "date": "August 2024 - Present",
-      "image": [
-        "/assets/images/medistock-home.png",
-        "/assets/images/medistock-event.png",
-        "/assets/images/medistock-booking.png"
-    ]
+      "image": null
     },
     {
       "name": "SalesChamp",
@@ -31,7 +27,7 @@
       "demoLink": "",
       "category": "Personal",
       "date": "March 2025",
-      "image": "/assets/images/medistock-home.png"
+      "image": null
     },
     {
       "name": "Raspberry Pi Camera (Motion Detection)",

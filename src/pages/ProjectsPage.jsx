@@ -6,7 +6,6 @@ import { MdSensors } from "react-icons/md";
 import { LuFileJson2 } from "react-icons/lu";
 import './ProjectsPage.css';
 import projectsData from '../projectsData.json'; // Import the JSON data
-import ProjectImageCarousel from '../components/ProjectImageCarousel'; // Import the separate component
 
 const TechnologyIcons = {
   'React': FaReact,
@@ -28,59 +27,36 @@ const TechnologyIcons = {
   'Raspberry Pi OS': FaRaspberryPi,
   'Raspberry Pi Camera Module': FaCamera,
   'PIR Motion Sensor': MdSensors,
-  'RPi.GPIO': FaNetworkWired,
-  'Telegram Bot API': FaTelegram,
+  'RPi.GPIO':FaNetworkWired,
+  'Telegram Bot API':FaTelegram,
   'OpenVPN': SiOpenvpn,
   'JSON Server': LuFileJson2
-};
-
-// Convert single image string to array for consistency
-const normalizeProjectImages = (projects) => {
-  return projects.map(project => {
-    // If image is null, return an empty array
-    if (!project.image) {
-      return { ...project, images: [] };
-    }
-    
-    // If image is a string, convert to array
-    if (typeof project.image === 'string') {
-      return { ...project, images: [project.image] };
-    }
-    
-    // If image is already an array, use it directly
-    if (Array.isArray(project.image)) {
-      return { ...project, images: project.image };
-    }
-    
-    return { ...project, images: [] };
-  });
 };
 
 const ProjectsPage = () => {
   const { isDarkMode, toggleTheme } = useContext(ThemeContext);
   const [activeCategory, setActiveCategory] = useState('All');
-  const [filteredProjects, setFilteredProjects] = useState([]);
-  const [normalizedProjects, setNormalizedProjects] = useState([]);
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
   const categories = ['All', 'Professional', 'Personal'];
 
   useEffect(() => {
-    // Normalize project data to handle image arrays consistently
-    const normalized = normalizeProjectImages(projectsData);
-    setNormalizedProjects(normalized);
-  }, []);
-
-  useEffect(() => {
     // Filter projects based on active category
     const filtered = activeCategory === 'All' 
-      ? normalizedProjects 
-      : normalizedProjects.filter(project => project.category === activeCategory);
+      ? projectsData 
+      : projectsData.filter(project => project.category === activeCategory);
     
     setFilteredProjects(filtered);
-  }, [activeCategory, normalizedProjects]);
+
+  }, [activeCategory]);
+
+  useEffect(() => {
+    if (isDarkMode !== undefined) { }
+    if (toggleTheme !== undefined) { }
+  }, [isDarkMode, toggleTheme]);
 
   return (
-    <section id="projects" className={`projects-section ${!isDarkMode ? 'light-theme' : ''}`}>
+    <section id="projects" className="projects-section">
       <div className="projects-container">
         <div className="projects-header">
           <h2 className="section-title">Projects</h2>
@@ -98,6 +74,7 @@ const ProjectsPage = () => {
           ))}
         </div>
 
+        {/* Add a key to force re-render */}
         <div className="projects-grid" key={activeCategory}>
           {filteredProjects.map((project, index) => (
             <div
@@ -105,8 +82,15 @@ const ProjectsPage = () => {
               className="project-card"
               style={{ '--animation-order': index }}
             >
-              <ProjectImageCarousel images={project.images} />
-              
+              {project.image && (
+                <div className="project-image-container">
+                  <img
+                    src={project.image}
+                    alt={`${project.name} project screenshot`}
+                    className="project-image"
+                  />
+                </div>
+              )}
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>
 
