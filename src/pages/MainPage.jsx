@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import './MainPage.css';
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import '@fontsource/roboto-mono';
 
 const HeroSection = () => {
@@ -92,7 +90,7 @@ const HeroSection = () => {
             </p>
 
             <div className="cta-section">
-                <a href="#about" className="cta-link">
+                <a href="/about" className="cta-link">
                     Explore my journey <span className="arrow">→</span>
                 </a>
 
@@ -105,6 +103,16 @@ const HeroSection = () => {
                     >
                         <FaLinkedin size={35} />
                     </a>
+
+                    <a 
+                        href="https://github.com/DuarteSantos8" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="social-link"
+                    >
+                        <FaGithub size={35} />
+                    </a>
+
                     <a
                         href="https://www.instagram.com/duarte.zh/"
                         target="_blank"
