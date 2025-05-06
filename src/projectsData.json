@@ -7,12 +7,16 @@
       "demoLink": "https://medistock.sunrise-avengers.ch/",
       "category": "Professional",
       "date": "August 2024 - Present",
-      "image": null
+      "image": [
+        "/assets/images/medistock-home.png",
+        "/assets/images/medistock-event.png",
+        "/assets/images/medistock-booking.png"
+    ]
     },
     {
       "name": "SalesChamp",
       "description": "A simple points-tracking dashboard for Sunrise sales agents to view and track their performance in real time. ",
-      "technologies": ["JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap", "Qlik"],
+      "technologies": ["JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap", "Qlik", "JSON Server"],
       "githubLink": "https://git.sunrise-avengers.ch/appli/saleschamp-frontend",
       "demoLink": "https://saleschamp.sunrise-avengers.ch/",
       "category": "Professional",
@@ -21,13 +25,13 @@
     },
     {
       "name": "Handsign Translator",
-      "description": "A real-time application that translates hand gestures into text using computer vision and machine learning.",
+      "description": "In this project, I explored computer vision and AI by building a real-time application that translates hand gestures into text. I trained the machine learning model myself to recognize different signs and used hand tracking to detect gestures from a webcam feed.",
       "technologies": ["Python", "OpenCV", "virtualenv", "CVZone", "NumPy", "MediaPipe"],
       "githubLink": "https://github.com/DuarteSantos8/Hand-recognition",
       "demoLink": "",
       "category": "Personal",
       "date": "March 2025",
-      "image": null
+      "image": "/assets/images/medistock-home.png"
     },
     {
       "name": "Raspberry Pi Camera (Motion Detection)",

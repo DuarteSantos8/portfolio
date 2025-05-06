@@ -7,7 +7,19 @@
   --text-secondary: #A0A0A0;
   --border-color: rgba(230, 227, 223, 0.1);
   --hover-color: rgba(230, 227, 223, 0.05);
-  --accent-color: #504A45;
+  --accent-color: #3498db;
+}
+
+/* Global Theme Variables */
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #121212;
+  --bg-secondary: #1E1E1E;
+  --text-primary: #E6E3Df;
+  --text-secondary: #A0A0A0;
+  --border-color: rgba(230, 227, 223, 0.1);
+  --hover-color: rgba(230, 227, 223, 0.05);
+  --accent-color: #3498db;
 }
 
 /* Light Theme */
@@ -18,7 +30,7 @@
   --text-secondary: #666666;
   --border-color: rgba(61, 57, 53, 0.1);
   --hover-color: rgba(61, 57, 53, 0.05);
-  --accent-color: #2A2723;
+  --accent-color: #2171a3;
 }
 
 /* Rest of the previous CSS remains the same... */
@@ -122,7 +134,7 @@ body {
 /* Projects Header */
 .projects-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
 }
@@ -317,4 +329,72 @@ body {
 .projects-grid .project-card {
   animation: fadeIn 0.6s ease backwards;
   animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+
+/* Fix for ProjectsPage.css */
+/* Update the gradient background to be more visible */
+.projects-section {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  /* Ensure the section itself doesn't override background */
+  background: transparent;
+}
+
+/* Fix body background gradient to be visible and stronger */
+body {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Add background to project cards to make them stand out */
+.project-card {
+  position: relative;
+  border-radius: 8px;
+  padding: 1.5rem;
+  /* Add glass-like effect */
+  background: rgba(30, 30, 30, 0.7) !important; /* Dark theme */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* Light theme specific card styling */
+.light-theme .project-card {
+  background: rgba(255, 255, 255, 0.7) !important; /* Light theme */
+}
+
+/* Fix for ProjectImageCarousel.css */
+/* Fullscreen overlay styling */
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-image-container {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
