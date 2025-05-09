@@ -30,7 +30,6 @@ const ContactPage = () => {
     const token = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
     const chatId = process.env.REACT_APP_TELEGRAM_CHAT_ID;
 
-  
     const message = `
       *New Contact Message*🔥
       *Name:* ${formData.name}
@@ -66,7 +65,6 @@ const ContactPage = () => {
     }
   };
   
-
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
@@ -92,11 +90,12 @@ const ContactPage = () => {
             </div>
             
             <div className="contact-social">
-            <a 
+              <a 
                 href="https://teams.microsoft.com/l/chat/0/0?users=duarte.lavourasreissantos@sunrise.net"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-button"
+                aria-label="Contact via Microsoft Teams"
               >
                 <BsMicrosoftTeams />
                 <span>Teams</span>
@@ -106,6 +105,7 @@ const ContactPage = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-button"
+                aria-label="Visit LinkedIn Profile"
               >
                 <FaLinkedin />
                 <span>LinkedIn</span>
