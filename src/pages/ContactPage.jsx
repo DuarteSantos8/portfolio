@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
+import { BsMicrosoftTeams } from "react-icons/bs";
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -25,29 +26,46 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+  
+    const token = process.env.REACT_APP_TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.REACT_APP_TELEGRAM_CHAT_ID;
+
+  
+    const message = `
+      *New Contact Message*🔥
+      *Name:* ${formData.name}
+      *Email:* ${formData.email}
+      *Subject:* ${formData.subject}
+
+      *Message:* 
+      ${formData.message}
+    `;
+  
     try {
-      // In a real implementation, you would send data to your backend
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: 'Markdown'
+        })
       });
+  
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+  
     } catch (error) {
+      console.error('Telegram error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      
-      // Reset status after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
+      setTimeout(() => setSubmitStatus(null), 5000);
     }
   };
+  
 
   return (
     <section id="contact" className="contact-section">
@@ -69,11 +87,20 @@ const ContactPage = () => {
               
               <div className="contact-item">
                 <FaMapMarkerAlt className="contact-icon" />
-                <span>Zurich, Switzerland</span>
+                <span>Ambassador House, Glattpark, Zürich</span>
               </div>
             </div>
             
             <div className="contact-social">
+            <a 
+                href="https://teams.microsoft.com/l/chat/0/0?users=duarte.lavourasreissantos@sunrise.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-button"
+              >
+                <BsMicrosoftTeams />
+                <span>Teams</span>
+              </a>
               <a 
                 href="https://www.linkedin.com/in/duarte-santos-a82775328/" 
                 target="_blank" 
@@ -82,16 +109,6 @@ const ContactPage = () => {
               >
                 <FaLinkedin />
                 <span>LinkedIn</span>
-              </a>
-              
-              <a 
-                href="https://github.com/DuarteSantos8" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="social-button"
-              >
-                <FaGithub />
-                <span>GitHub</span>
               </a>
             </div>
           </div>
