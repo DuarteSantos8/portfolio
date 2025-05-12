@@ -362,3 +362,57 @@
     justify-content: center;
   }
 }
+.textarea-wrapper {
+  position: relative;
+}
+/* Textarea Styling */
+.textarea-wrapper {
+  position: relative;
+}
+
+.textarea-wrapper textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-bottom: 2.5rem; /* space for the counter */
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.textarea-wrapper textarea:focus {
+  outline: none;
+  border-color: rgba(52, 152, 219, 0.5);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.char-counter {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  pointer-events: none;
+  padding-left: 0.4rem;
+  transition: color 0.2s ease;
+  background-color: transparent;
+}
+
+.limit-reached {
+  color: #e74c3c !important;
+}
+
+/* Light theme override for char counter */
+.light-theme .char-counter {
+  color: var(--text-secondary);
+}
+
+/* Dark theme override for char counter */
+.dark-theme .char-counter {
+  color: var(--text-secondary);
+}
