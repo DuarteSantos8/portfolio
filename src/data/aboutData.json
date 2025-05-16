@@ -1,0 +1,46 @@
+{
+    "experiences": [
+      {
+        "company": "BBC Basislehrjahr",
+        "logo": "/assets/logos/bbc-logo.svg",
+        "color": "#009ee3",
+        "position": "Student Developer",
+        "period": "August 2023 - July 2024",
+        "description": "Comprehensive foundational year in IT, covering the core principles of software development, networking, operating systems, databases, security and project management. Built various practical applications using Java, Python and web technologies and gained experience with Spring Boot, MySQL, Firebase and IoT. Learned to work with Agile methods, version control (Git) and gained exposure to full-stack development.",
+        "technologies": ["Java", "Springboot", "Python", "Firebase", "MySQL", "HTML", "CSS", "JavaScript", "React", "IoT", "Expo Go"]
+      },
+      {
+        "company": "Sunrise GmbH",
+        "logo": "/assets/logos/sunrise-logo.png",
+        "color": "#DA291C",
+        "position": "DAL (Digital Avengers Lab)",
+        "period": "August 2024 - April 2025",
+        "description": "Worked on two major internal projects: MediStock, a full-stack material reservation tool developed with React and Flask and SalesChamp, a B2B-focused CRM enhancement. Focused on frontend development, state management, database design and implementing secure user interactions. Collaborated with designers, backend engineers and business stakeholders in an agile, fast-paced environment.",
+        "technologies": ["React", "JavaScript", "HTML", "CSS", "Firebase", "Flask"]
+      },
+      {
+        "company": "Sunrise GmbH",
+        "logo": "/assets/logos/sunrise-logo.png",
+        "color": "#DA291C",
+        "position": "DAL (Digital Avengers Lab) | Stage as Platform Engineer",
+        "period": "May 2025 - Present",
+        "description": "[To be written later – focus on DevOps, scripting, Raspberry Pi networking, system automation, Linux and platform reliability.]",
+        "technologies": ["Linux", "Networking", "Scripting", "Git", "Docker", "Nginx", "Bash", "nmcli"]
+      }
+    ],
+    "skillGroups": [
+      {
+        "category": "Frontend",
+        "skills": ["React", "JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap"]
+      },
+      {
+        "category": "Backend",
+        "skills": ["Python", "Flask", "MySQL", "MongoDB", "Firebase"]
+      },
+      {
+        "category": "Tools & Libraries",
+        "skills": ["Git", "Docker", "Postman", "Expo Go", "Figma", "Canva", "VS Code", "IntelliJ IDEA", "PyCharm"]
+      }
+    ]
+  }
+  

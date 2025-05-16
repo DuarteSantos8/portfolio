@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<MainPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="about" element={<AboutPage />} />
           </Routes>
           <Footer />
         </div>

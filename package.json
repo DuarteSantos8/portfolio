@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "emailjs-com": "^3.2.0",
     "fontsource": "^0.0.1-security",
     "lottie-react": "^2.4.1",
     "react": "^19.0.0",

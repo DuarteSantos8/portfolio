@@ -5,7 +5,7 @@ import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv,
 import { MdSensors } from "react-icons/md";
 import { LuFileJson2 } from "react-icons/lu";
 import './ProjectsPage.css';
-import projectsData from '../projectsData.json'; // Import the JSON data
+import projectsData from '../data/projectsData.json'; // Import the JSON data
 
 const TechnologyIcons = {
   'React': FaReact,

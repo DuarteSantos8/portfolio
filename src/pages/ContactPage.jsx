@@ -1,17 +1,21 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 import { BsMicrosoftTeams } from "react-icons/bs";
+import emailjs from 'emailjs-com';
 import './ContactPage.css';
 
 const ContactPage = () => {
   const { isDarkMode } = useContext(ThemeContext);
+  const formRef = useRef();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
     message: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
@@ -23,41 +27,25 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
-    const formDataObj = new FormData();
-    formDataObj.append("name", formData.name);
-    formDataObj.append("email", formData.email);
-    formDataObj.append(
-      "message",
-      `Subject: ${formData.subject}\n\n${formData.message}`
-    );
-    
-  
-    try {
-      const response = await fetch(process.env.REACT_APP_FORMSPREE_URL, {
-        method: 'POST',
-        headers: {
-          Accept: "application/json"
-        },
-        body: formDataObj
-      });
-  
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        setSubmitStatus('error');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+
+    emailjs.sendForm(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formRef.current,
+      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    ).then(() => {
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    }).catch((error) => {
+      console.error('EmailJS error:', error);
       setSubmitStatus('error');
-    } finally {
+    }).finally(() => {
       setIsSubmitting(false);
-    }
-  };  
+    });
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -111,6 +99,7 @@ const ContactPage = () => {
             <form 
               className="contact-form" 
               onSubmit={handleSubmit}
+              ref={formRef}
             >
               <div className="form-group">
                 <label htmlFor="name">Name</label>
