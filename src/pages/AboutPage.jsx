@@ -60,9 +60,9 @@ const AboutPage = () => {
           <div className="timeline">
             {experiences.map((exp, index) => (
               <div key={index} className="timeline-item" style={{ '--animation-order': index }}>
-                <div className="timeline-dot" style={{ backgroundColor: exp.color || 'var(--timeline-dot-color)' }}></div>
+                <div className="timeline-dot" style={{ backgroundColor: exp.color }}></div>
                 {index < experiences.length - 1 && (
-                  <div className="timeline-line" style={{ backgroundColor: exp.color ? `${exp.color}80` : 'var(--timeline-line-color)' }}></div>
+                  <div className="timeline-line" style={{ backgroundColor: exp.color }}></div>
                 )}
                 <div className="timeline-content">
                   <div className="timeline-header">
