@@ -9,14 +9,6 @@ const ContactPage = () => {
   const { isDarkMode } = useContext(ThemeContext);
   const formRef = useRef();
 
-  console.log(
-  'EmailJS keys:',
-  process.env.REACT_APP_EMAILJS_SERVICE_ID,
-  process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-  process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-);
-
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
