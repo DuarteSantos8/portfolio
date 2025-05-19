@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 import { BsMicrosoftTeams } from "react-icons/bs";
@@ -18,6 +18,57 @@ const ContactPage = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [timeUntilNextMessage, setTimeUntilNextMessage] = useState(0);
+  const [timerActive, setTimerActive] = useState(false);
+
+  // Prüfe beim Laden der Komponente, ob eine Zeitbegrenzung aktiv ist
+  useEffect(() => {
+    checkRateLimit();
+  }, []);
+
+  // Timer-Funktion, die den verbleibenden Countdown aktualisiert
+  useEffect(() => {
+    let interval;
+    if (timerActive && timeUntilNextMessage > 0) {
+      interval = setInterval(() => {
+        setTimeUntilNextMessage(prevTime => {
+          const newTime = prevTime - 1;
+          if (newTime <= 0) {
+            clearInterval(interval);
+            setTimerActive(false);
+            return 0;
+          }
+          return newTime;
+        });
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [timerActive, timeUntilNextMessage]);
+
+  // Prüft, ob der Benutzer das Rate-Limit erreicht hat
+  const checkRateLimit = () => {
+    const lastMessageTime = localStorage.getItem('lastMessageTime');
+    if (lastMessageTime) {
+      const currentTime = new Date().getTime();
+      const timeDiff = currentTime - parseInt(lastMessageTime);
+      const waitTime = 600000; // 10 Minuten in Millisekunden
+      
+      if (timeDiff < waitTime) {
+        const remainingTime = Math.ceil((waitTime - timeDiff) / 1000);
+        setTimeUntilNextMessage(remainingTime);
+        setTimerActive(true);
+        return true;
+      }
+    }
+    return false;
+  };
+
+  // Formatiert die verbleibende Zeit in Minuten und Sekunden
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +80,13 @@ const ContactPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Prüfe, ob der Benutzer eine Nachricht senden darf
+    if (checkRateLimit()) {
+      setSubmitStatus('rate-limited');
+      return;
+    }
+    
     setIsSubmitting(true);
 
     emailjs.sendForm(
@@ -39,6 +97,12 @@ const ContactPage = () => {
     ).then(() => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Speichere den Zeitstempel der gesendeten Nachricht
+      localStorage.setItem('lastMessageTime', new Date().getTime().toString());
+      setTimeUntilNextMessage(600); // 10 Minuten in Sekunden
+      setTimerActive(true);
+      
     }).catch((error) => {
       console.error('EmailJS error:', error);
       setSubmitStatus('error');
@@ -111,6 +175,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                   placeholder="Your name"
+                  disabled={timerActive}
                 />
               </div>
 
@@ -124,6 +189,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                   placeholder="Your email"
+                  disabled={timerActive}
                 />
               </div>
 
@@ -137,6 +203,7 @@ const ContactPage = () => {
                   onChange={handleChange}
                   required
                   placeholder="Subject"
+                  disabled={timerActive}
                 />
               </div>
 
@@ -152,6 +219,7 @@ const ContactPage = () => {
                     placeholder="Your message"
                     rows="6"
                     maxLength="500"
+                    disabled={timerActive}
                   />
                   <span className={`char-counter ${formData.message.length >= 500 ? 'limit-reached' : ''}`}>
                     {formData.message.length}/500
@@ -159,13 +227,19 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </button>
+              {timerActive ? (
+                <div className="rate-limit-notice">
+                  <p>Bitte warte {formatTime(timeUntilNextMessage)} bevor du eine weitere Nachricht sendest.</p>
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
+                  disabled={isSubmitting || timerActive}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </button>
+              )}
 
               {submitStatus === 'success' && (
                 <div className="form-status success">
@@ -176,6 +250,12 @@ const ContactPage = () => {
               {submitStatus === 'error' && (
                 <div className="form-status error">
                   There was an error sending your message. Please try again.
+                </div>
+              )}
+
+              {submitStatus === 'rate-limited' && (
+                <div className="form-status warn">
+                  Du kannst nur eine Nachricht alle 10 Minuten senden. Bitte warte.
                 </div>
               )}
             </form>

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import data from '../data/aboutData.json';
-import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJava, FaRaspberryPi, FaBuilding, FaJs, FaMobileAlt, FaLinux, FaGitAlt, FaDocker, FaNetworkWired, FaFigma } from 'react-icons/fa';
+import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJava, FaRaspberryPi, FaBuilding, FaJs, FaMobileAlt, FaLinux, FaGitAlt, FaDocker, FaNetworkWired, FaFigma, FaApple, FaWindows } from 'react-icons/fa';
 import { SiFlask, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe, SiSpring, SiNginx, SiGnubash, SiPostman, SiCanva, SiIntellijidea, SiPycharm, SiMongodb } from 'react-icons/si';
 import { IoTerminal } from "react-icons/io5";
 import { MdNetworkWifi } from 'react-icons/md';
@@ -46,7 +46,10 @@ const AboutPage = () => {
     'VS Code': BiLogoVisualStudio,
     'IntelliJ IDEA': SiIntellijidea,
     'PyCharm': SiPycharm,
-    'MongoDB': SiMongodb
+    'MongoDB': SiMongodb,
+    'MacOS': FaApple,
+    'Windows 10': FaWindows,
+    'Windows 11': FaWindows,
   };
 
   return (

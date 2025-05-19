@@ -40,6 +40,10 @@
       {
         "category": "Tools & Libraries",
         "skills": ["Git", "Docker", "Postman", "Expo Go", "Figma", "Canva", "VS Code", "IntelliJ IDEA", "PyCharm"]
+      },
+      {
+        "category": "OS",
+        "skills": ["MacOS", "Windows 10", "Windows 11", "Linux"]
       }
     ]
   }
