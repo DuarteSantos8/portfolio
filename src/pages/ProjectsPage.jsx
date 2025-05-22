@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { FaGitlab, FaGithub, FaExternalLinkAlt, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs, FaRaspberryPi, FaCamera, FaNetworkWired, FaTelegram} from 'react-icons/fa';
-import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe } from 'react-icons/si';
+import { FaGitlab, FaGithub, FaExternalLinkAlt, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs, FaRaspberryPi, FaCamera, FaNetworkWired, FaTelegram, FaClock, FaLinux} from 'react-icons/fa';
+import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe, SiGnubash, SiGrafana, SiInfluxdb } from 'react-icons/si';
 import { MdSensors } from "react-icons/md";
 import { LuFileJson2 } from "react-icons/lu";
 import './ProjectsPage.css';
@@ -30,7 +30,14 @@ const TechnologyIcons = {
   'RPi.GPIO':FaNetworkWired,
   'Telegram Bot API':FaTelegram,
   'OpenVPN': SiOpenvpn,
-  'JSON Server': LuFileJson2
+  'JSON Server': LuFileJson2,
+  'Bash': SiGnubash,
+  'Ping': FaNetworkWired,
+  'Telnet': FaTerminal,
+  'InfluxDB': SiInfluxdb,
+  'Grafana': SiGrafana,
+  'Cron': FaClock,
+  'Linux': FaLinux
 };
 
 const ProjectsPage = () => {
@@ -41,7 +48,6 @@ const ProjectsPage = () => {
   const categories = ['All', 'Professional', 'Personal'];
 
   useEffect(() => {
-    // Filter projects based on active category
     const filtered = activeCategory === 'All' 
       ? projectsData 
       : projectsData.filter(project => project.category === activeCategory);

@@ -38,6 +38,16 @@
       "category": "Personal",
       "date": "April 2025",
       "image": null
-    }    
-  ]
+    },
+    {
+      "name": "Network Monitoring with InfluxDB & Grafana",
+      "description": "This project monitors the status of multiple PCs listed in a .txt file. A Bash script pings each PC to check if it's online, then uses Telnet to verify if port 3389 is open. The results are saved in an InfluxDB database and visualized in real-time using a Grafana dashboard. The script runs every minute via cron, providing up-to-date visibility of the network status.",
+      "technologies": ["Bash", "Ping", "Telnet", "InfluxDB", "Grafana", "Cron", "Linux"],
+      "githubLink": null,
+      "demoLink": "",
+      "category": "Professional",
+      "date": "May 2025",
+      "image": null
+    }
+]
   
