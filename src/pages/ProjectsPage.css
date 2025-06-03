@@ -201,6 +201,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 /* Project Card */
@@ -293,6 +294,39 @@ body {
   transform: scale(1.1);
 }
 
+/* CTA Section - Similar to MainPage */
+.projects-cta-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  animation: slideIn 1.2s ease forwards;
+}
+
+.projects-cta-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+.projects-cta-link:hover {
+  transform: translateX(8px) scale(1.05);
+}
+
+.projects-cta-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
 /* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   .projects-grid {
@@ -319,6 +353,17 @@ body {
   from {
       opacity: 0;
       transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
   }
   to {
       opacity: 1;

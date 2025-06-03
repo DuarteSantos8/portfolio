@@ -1,10 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
   const { isDarkMode } = useContext(ThemeContext);
+
+  useEffect(() => {
+    // Function to adjust the page height
+    const adjustPageHeight = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.offsetHeight;
+      const footerHeight = document.querySelector('.footer').offsetHeight;
+      
+      // If document is shorter than the window, make the content area taller
+      if (documentHeight < windowHeight) {
+        document.querySelector('#root').style.minHeight = `${windowHeight}px`;
+      }
+    };
+    
+    // Run on mount and when window is resized
+    adjustPageHeight();
+    window.addEventListener('resize', adjustPageHeight);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', adjustPageHeight);
+  }, []);
   
   return (
     <footer className="footer">

@@ -973,3 +973,75 @@
     }
   }
 }
+.discord-ping {
+  background: rgba(80, 74, 69, 0.15); /* match --accent-color */
+  color: var(--text-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(80, 74, 69, 0.3);
+  display: inline-block;
+  font-family: inherit;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.discord-ping:hover {
+  background: rgba(80, 74, 69, 0.25);
+  color: var(--text-primary);
+  border-color: rgba(80, 74, 69, 0.5);
+}
+
+.discord-ping::before {
+  content: '@';
+  font-weight: 600;
+  margin-right: 0.15rem;
+  color: var(--text-primary);
+}
+
+.light-theme .discord-ping {
+  background: rgba(42, 39, 35, 0.05); /* match --accent-color in light */
+  color: var(--accent-color);
+  border-color: rgba(42, 39, 35, 0.15);
+}
+
+.light-theme .discord-ping:hover {
+  background: rgba(42, 39, 35, 0.1);
+  color: var(--accent-color);
+  border-color: rgba(42, 39, 35, 0.3);
+}
+
+.cta-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border-radius: 4px;
+}
+
+.cta-link:hover {
+  transform: translateX(8px) scale(1.05);
+}
+
+.dark-theme .cta-link {
+  color: #E6E3Df;
+}
+
+.light-theme .cta-link {
+  color: #3D3935;
+}
+
+.cta-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}

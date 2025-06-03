@@ -141,6 +141,13 @@ const ProjectsPage = () => {
             </div>
           ))}
         </div>
+
+        {/* CTA Section */}
+        <div className="projects-cta-section">
+          <a href="/contact" className="projects-cta-link">
+            Let's connect! <span className="arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
   );

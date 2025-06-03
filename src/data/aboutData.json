@@ -19,7 +19,7 @@
         "color": "#DA291C",
         "position": "DAL (Digital Avengers Lab)",
         "period": "August 2024 - April 2025",
-        "description": "Worked on two major internal projects: MediStock, a full-stack material reservation tool developed with React and Flask and SalesChamp, a B2B-focused CRM enhancement. Focused on frontend development, state management, database design and implementing secure user interactions. Collaborated with designers, backend engineers and business stakeholders in an agile, fast-paced environment.",
+        "description": "Worked on two major internal projects: MediStock, a full-stack material reservation tool developed with React and Flask and SalesChamp, a B2B-focused CRM enhancement. Focused on frontend development, state management, database design and implementing secure user interactions. Collaborated with designers, backend engineers and business stakeholders in an agile, fast-paced environment. I also worked closely with [@Neo Stutz](https://neo.sunrise-avengers.ch/) and participated in many 'Schnupper Tage' and other outreach events with children interested in our profession. I also had a great time working and learning alongside my fellow apprentices [@Nik Brönnimann](https://nik.sunrise-avengers.ch/), [@Bareth Balakanthan](https://bareth.sunrise-avengers.ch/) and [@Simon Schiller](https://simon.sunrise-avengers.ch/). Together we built, learned, and laughed — and even made our own site at [@Digital Avengers Lab](https://sunrise-avengers.ch).",
         "technologies": ["React", "JavaScript", "HTML", "CSS", "Firebase", "Flask", "MySQL", "Git", "Vue.js", "JSON Server", "Bootstrap", "Bootstrap"],
         "supervisor": {
           "name": "Roman Stammbach",

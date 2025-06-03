@@ -72,6 +72,37 @@ const AboutPage = () => {
     setIsQuoteActive(!isQuoteActive);
   };
 
+  const renderWithMentions = (text) => {
+  const regex = /\[@([^\]]+)]\((https?:\/\/[^\)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    const before = text.substring(lastIndex, match.index);
+    if (before) parts.push(before);
+
+    const displayName = match[1];
+    const url = match[2];
+
+    parts.push(
+      <a
+        key={match.index}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="discord-ping"
+      >
+        {displayName}
+      </a>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  parts.push(text.substring(lastIndex));
+  return parts;
+};
+
   return (
     <section id="experience" className="experience-section">
       <div className="experience-container">
@@ -248,7 +279,7 @@ const AboutPage = () => {
         <div className="experience-content">
           <h3 className="values-title">Experience</h3>
           <div className="timeline">
-            {experiences.map((exp, index) => (
+{experiences.map((exp, index) => (
               <div key={index} className="timeline-item" style={{ '--animation-order': index }}>
                 <div className="timeline-dot" style={{ backgroundColor: exp.color }}></div>
                 {index < experiences.length - 1 && (
@@ -272,17 +303,35 @@ const AboutPage = () => {
                       <div className="timeline-period">{exp.period}</div>
                     </div>
                   </div>
-                  <p className="timeline-description">{exp.description}</p>
+                  <p className="timeline-description">
+  {renderWithMentions(exp.description)}
+</p>
+
                   
                   {/* Supervisor Information */}
                   {exp.supervisor && (
                     <div className="supervisor-info">
-                      <span className="supervisor-text">Supervised by: </span>
-                      <span className="supervisor-name">{exp.supervisor.name}</span>
-                      <span className="supervisor-separator"> • </span>
-                      <a href={`mailto:${exp.supervisor.contact}`} className="supervisor-contact">
-                        {exp.supervisor.contact}
-                      </a>
+                      <span className="supervisor-text">
+                        {exp.supervisor.isWebsite ? 'Organized by: ' : 'Supervised by: '}
+                      </span>
+                      {exp.supervisor.isWebsite ? (
+                        <a 
+                          href={exp.supervisor.contact} 
+                          className="supervisor-contact discord-ping"
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          {exp.supervisor.name}
+                        </a>
+                      ) : (
+                        <>
+                          <span className="supervisor-name">{exp.supervisor.name}</span>
+                          <span className="supervisor-separator"> • </span>
+                          <a href={`mailto:${exp.supervisor.contact}`} className="supervisor-contact">
+                            {exp.supervisor.contact}
+                          </a>
+                        </>
+                      )}
                     </div>
                   )}                  
                   <div className="timeline-technologies">
@@ -301,6 +350,10 @@ const AboutPage = () => {
             ))}
           </div>
         </div>
+
+        <a href="/projects" className="cta-link">
+                    Explore my projects <span className="arrow">→</span>
+                </a>
 
         <div className="skills-section">
           <h3 className="skills-title">Technologies & Skills</h3>
