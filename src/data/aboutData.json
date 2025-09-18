@@ -31,12 +31,25 @@
         "logo": "/assets/logos/sunrise-logo.png",
         "color": "#DA291C",
         "position": "DAL (Digital Avengers Lab) | Stage as Platform Engineer",
-        "period": "May 2025 - Present",
-        "description": "[To be written later – focus on DevOps, scripting, Raspberry Pi networking, system automation, Linux and platform reliability.]",
+        "period": "May 2025 - July 2025",
+        "description": "During this time, I built a standalone Raspberry Pi router and access point—completely air-gapped—serving a local web portal via custom domains and reverse-proxy rules. I also wrote Bash scripts to continuously ping multiple PCs, funneling those performance metrics into InfluxDB and crafting real-time Grafana dashboards that show per-machine uptime, latency, and bandwidth. If any machine went offline, automated alerting would fire off an email to the administrator. On the network side, I designed and implemented a dual-zone architecture behind a firewall to keep development and operations traffic isolated and secure.",
         "technologies": ["Linux", "Networking", "Scripting", "Git", "Docker", "Nginx", "Bash", "nmcli", "Raspberry Pi", "Python", "Grafana", "InfluxDB", "VM"],
         "supervisor": {
           "name": "Manfred Sauder",
           "contact": "manfred.sauder@sunrise.net"
+        }
+      },
+      {
+        "company": "Sunrise GmbH",
+        "logo": "/assets/logos/sunrise-logo.png",
+        "color": "#DA291C",
+        "position": "OMNI Platform",
+        "period": "August 2025 - Present",
+        "description": "[To be written later – focus on Fullstack development, vue.js, Laravel. - Working on the AMP Project]",
+        "technologies": ["Vue.js", "Laravel", "Fullstack", "Git", "JavaScript"],
+        "supervisor": {
+          "name": "Sofiane Benmbarek",
+          "contact": "sofiane.benmbarek@sunrise.net"
         }
       }
     ],
