@@ -1,6 +1,6 @@
 .hero-section {
   max-width: 800px;
-  margin: 4rem auto;
+  margin: 4rem auto 0;
   padding: 0 2rem;
   position: relative;
   z-index: 1;
@@ -102,6 +102,10 @@
 
 .light-theme .social-link {
   color: #3D3935;
+}
+
+.parallax-layer {
+  transition: transform 0.18s ease-out;
 }
 
 /* Add this to your existing MainPage.css */

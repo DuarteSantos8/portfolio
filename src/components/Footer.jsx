@@ -1,93 +1,51 @@
-import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
-  const { isDarkMode } = useContext(ThemeContext);
+  const { t } = useLanguage();
 
-  useEffect(() => {
-    // Function to adjust the page height
-    const adjustPageHeight = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.body.offsetHeight;
-      const footerHeight = document.querySelector('.footer').offsetHeight;
-      
-      // If document is shorter than the window, make the content area taller
-      if (documentHeight < windowHeight) {
-        document.querySelector('#root').style.minHeight = `${windowHeight}px`;
-      }
-    };
-    
-    // Run on mount and when window is resized
-    adjustPageHeight();
-    window.addEventListener('resize', adjustPageHeight);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', adjustPageHeight);
-  }, []);
-  
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-left">
             <div className="footer-logo">Duarte Santos</div>
-            <p className="footer-tagline">Building elegant digital solutions</p>
+            <p className="footer-tagline">{t.footer.tagline}</p>
           </div>
-          
+
           <div className="footer-center">
             <div className="footer-nav">
-              <a href="/" className="footer-link">Home</a>
-              <a href="/about" className="footer-link">About</a>
-              <a href="/projects" className="footer-link">Projects</a>
-              <a href="/contact" className="footer-link">Contact</a>
+              <Link to="/" className="footer-link">{t.nav.home}</Link>
+              <Link to="/about" className="footer-link">{t.nav.about}</Link>
+              <Link to="/projects" className="footer-link">{t.nav.projects}</Link>
+              <Link to="/contact" className="footer-link">{t.nav.contact}</Link>
             </div>
           </div>
-          
+
           <div className="footer-right">
             <div className="footer-social">
-              <a 
-                href="https://www.linkedin.com/in/duarte-santos-a82775328/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="footer-social-link"
-              >
+              <a href="https://www.linkedin.com/in/duarte-santos-a82775328/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
                 <FaLinkedin />
               </a>
-              <a 
-                href="https://github.com/DuarteSantos8" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="footer-social-link"
-              >
+              <a href="https://github.com/DuarteSantos8" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub">
                 <FaGithub />
               </a>
-              <a 
-                href="https://www.instagram.com/duarte.zh/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="footer-social-link"
-              >
+              <a href="https://www.instagram.com/duarte.zh/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a 
-                href="mailto:duarte.lavourasreissantos@sunrise.net" 
-                className="footer-social-link"
-              >
+              <a href="mailto:contact@duarte-santos.ch" className="footer-social-link" aria-label="Email">
                 <FaEnvelope />
               </a>
             </div>
           </div>
         </div>
-        
+
         <div className="footer-bottom">
-          <div className="copyright">
-            © {new Date().getFullYear()} Duarte Santos. All rights reserved.
-          </div>
-          <div className="made-with">
-            Made in Zurich, Switzerland
-          </div>
+          <div className="copyright">{t.footer.copyright(new Date().getFullYear())}</div>
+          <div className="made-with">{t.footer.madeIn}</div>
         </div>
       </div>
     </footer>

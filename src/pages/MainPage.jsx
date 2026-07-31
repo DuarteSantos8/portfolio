@@ -1,23 +1,29 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import './MainPage.css';
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import '@fontsource/roboto-mono';
+import { useLanguage } from '../context/LanguageContext';
 
 const HeroSection = () => {
+    const { language, t } = useLanguage();
     const [temperature, setTemperature] = useState(null);
-    const phrases = useMemo(() => [
-        "Hello World!", 
-        "I'm Duarte Santos", 
-        "A Software Developer", 
-        temperature 
-            ? `In Zurich ${temperature}, CH` 
-            : "In Zurich, Switzerland", 
-        "@ Sunrise GmbH"
-    ], [temperature]);
+
+    const phrases = useMemo(() => t.main.phrases(temperature), [temperature, t]);
 
     const [text, setText] = useState('');
     const [currentPhrase, setCurrentPhrase] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
+    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+    const age = useMemo(() => {
+        const birthDate = new Date(2007, 9, 28);
+        const today = new Date();
+        let a = today.getFullYear() - birthDate.getFullYear();
+        const m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) a--;
+        return a;
+    }, []);
 
     useEffect(() => {
         const fetchTemperature = async () => {
@@ -27,24 +33,25 @@ const HeroSection = () => {
                 );
                 const data = await response.json();
                 const temp = data.current_weather.temperature;
-    
-                // Round the temperature and add °C
-                const formattedTemp = `${Math.round(temp)}°C`;
-    
-                setTemperature(formattedTemp);
-            } catch (error) {
-                console.error('Failed to fetch temperature:', error);
+                setTemperature(`${Math.round(temp)}°C`);
+            } catch {
                 setTemperature(null);
             }
         };
-    
         fetchTemperature();
-    }, []);        
+    }, []);
+
+    // Reset typing animation when language changes
+    useEffect(() => {
+        setText('');
+        setCurrentPhrase(0);
+        setIsDeleting(false);
+    }, [language]);
 
     useEffect(() => {
         const handleTyping = () => {
             const current = phrases[currentPhrase];
-            
+
             if (isDeleting) {
                 setText(current.substring(0, text.length - 1));
                 if (text.length === 0) {
@@ -65,70 +72,86 @@ const HeroSection = () => {
         return () => clearTimeout(timer);
     }, [text, isDeleting, currentPhrase, phrases]);
 
-    const getAge = () => {
-        const birthDate = new Date(2007, 9, 28);
-        const today = new Date();
-        let age = today.getFullYear() - birthDate.getFullYear();
-        const m = today.getMonth() - birthDate.getMonth();
-        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-          age--;
-        }
-        return age;
-      };
+    const handleMouseMove = useCallback((e) => {
+        const { currentTarget, clientX, clientY } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        setMousePos({
+            x: (clientX - left) / width - 0.5,
+            y: (clientY - top) / height - 0.5,
+        });
+    }, []);
+
+    const handleMouseLeave = useCallback(() => {
+        setMousePos({ x: 0, y: 0 });
+    }, []);
 
     return (
-        <section className="hero-section">
-            <h1 className="title">
-                {text}
-                <span className="typing-cursor">|</span>
-            </h1>
-            <p className="description">
-            I'm a passionate software developer at Sunrise and currently {getAge()} years old. Using JavaScript React, Python and many more languages I build modern web apps that turn complex ideas into clean, user-friendly experiences.
-            </p>
-            <p className="description">
-            Driven by curiosity and a love for clean, efficient code, I’m always exploring new technologies. For me, every project is a chance to grow, learn something new, and push the limits of what’s possible with code.    
-            </p>
+        <section className="hero-section" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+            <div
+                className="parallax-layer"
+                style={{ transform: `translate(${mousePos.x * 16}px, ${mousePos.y * 9}px)` }}
+            >
+                <h1 className="title">
+                    {text}
+                    <span className="typing-cursor">|</span>
+                </h1>
+            </div>
 
-            <div className="cta-section">
-                <a href="/about" className="cta-link">
-                    Explore my journey <span className="arrow">→</span>
-                </a>
+            <div
+                className="parallax-layer"
+                style={{ transform: `translate(${mousePos.x * 8}px, ${mousePos.y * 5}px)` }}
+            >
+                <p className="description">{t.main.desc1(age)}</p>
+                <p className="description">{t.main.desc2}</p>
+            </div>
 
-                <div className="social-links">
-                    <a
-                        href="https://www.linkedin.com/in/duarte-santos-a82775328/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                    >
-                        <FaLinkedin size={35} />
-                    </a>
+            <div
+                className="parallax-layer"
+                style={{ transform: `translate(${mousePos.x * 4}px, ${mousePos.y * 2.5}px)` }}
+            >
+                <div className="cta-section">
+                    <Link to="/about" className="cta-link">
+                        {t.main.cta} <span className="arrow">→</span>
+                    </Link>
 
-                    <a 
-                        href="https://github.com/DuarteSantos8" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="social-link"
-                    >
-                        <FaGithub size={35} />
-                    </a>
+                    <div className="social-links">
+                        <a
+                            href="https://www.linkedin.com/in/duarte-santos-a82775328/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                            aria-label="LinkedIn"
+                        >
+                            <FaLinkedin size={35} />
+                        </a>
 
-                    <a
-                        href="https://www.instagram.com/duarte.zh/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                    >
-                        <FaInstagram size={35} />
-                    </a>
-                    <a
-                        href="mailto:duarte.lavourasreissantos@sunrise.net"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="social-link"
-                    >
-                        <FaEnvelope size={35}/>
-                    </a>
+                        <a
+                            href="https://github.com/DuarteSantos8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                            aria-label="GitHub"
+                        >
+                            <FaGithub size={35} />
+                        </a>
+
+                        <a
+                            href="https://www.instagram.com/duarte.zh/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-link"
+                            aria-label="Instagram"
+                        >
+                            <FaInstagram size={35} />
+                        </a>
+                        <a
+                            href="mailto:contact@duarte-santos.ch"
+                            className="social-link"
+                            aria-label="Email"
+                        >
+                            <FaEnvelope size={35}/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

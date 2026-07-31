@@ -85,15 +85,6 @@
   transform: scale(1.05);
 }
 
-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  transition: 
-      background-color 0.3s ease, 
-      color 0.3s ease;
-}
 
 /* Custom Scrollbar */
 * {
@@ -121,7 +112,7 @@ body {
 /* Projects Section */
 .projects-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 4rem auto 0;
   padding: 0 2rem;
   position: relative;
   z-index: 1;
@@ -201,7 +192,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-bottom: 4rem;
 }
 
 /* Project Card */
@@ -294,37 +284,30 @@ body {
   transform: scale(1.1);
 }
 
-/* CTA Section - Similar to MainPage */
-.projects-cta-section {
-  display: flex;
-  justify-content: center;
-  margin-top: 4rem;
-  animation: slideIn 1.2s ease forwards;
-}
-
-.projects-cta-link {
+/* GitHub stars badge */
+.project-stars {
   display: inline-flex;
   align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  color: var(--text-secondary);
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-stars:hover {
   color: var(--text-primary);
 }
 
-.projects-cta-link:hover {
-  transform: translateX(8px) scale(1.05);
+.project-stars-icon {
+  color: #e3b341;
+  transition: transform 0.3s ease;
 }
 
-.projects-cta-link:hover .arrow {
-  transform: translateX(4px);
-}
-
-.arrow {
-  margin-left: 0.5rem;
-  font-size: 1.2rem;
-  transition: transform 0.4s ease;
+.project-stars:hover .project-stars-icon {
+  transform: scale(1.15) rotate(12deg);
 }
 
 /* Responsive Adjustments */
@@ -360,20 +343,18 @@ body {
   }
 }
 
-@keyframes slideIn {
-  from {
-      opacity: 0;
-      transform: translateY(30px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-
 .projects-grid .project-card {
   animation: fadeIn 0.6s ease backwards;
   animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+/* Smooth category switch */
+.projects-grid {
+  transition: opacity 0.2s ease;
+}
+
+.projects-grid.animating {
+  opacity: 0;
 }
 
 
@@ -381,20 +362,13 @@ body {
 /* Update the gradient background to be more visible */
 .projects-section {
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 4rem auto 0;
   padding: 0 2rem;
   position: relative;
   z-index: 1;
-  /* Ensure the section itself doesn't override background */
   background: transparent;
 }
 
-/* Fix body background gradient to be visible and stronger */
-body {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-  background-attachment: fixed;
-  min-height: 100vh;
-}
 
 /* Add background to project cards to make them stand out */
 .project-card {

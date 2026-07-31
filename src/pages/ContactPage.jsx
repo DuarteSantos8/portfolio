@@ -1,13 +1,13 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
-import { FaEnvelope, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
-import { BsMicrosoftTeams } from "react-icons/bs";
-import emailjs from 'emailjs-com';
+import React, { useState, useRef, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+import confetti from 'canvas-confetti';
 import './ContactPage.css';
 
 const ContactPage = () => {
-  const { isDarkMode } = useContext(ThemeContext);
-  const formRef = useRef();
+  const { t } = useLanguage();
+  const formRef = useRef(null);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -21,12 +21,10 @@ const ContactPage = () => {
   const [timeUntilNextMessage, setTimeUntilNextMessage] = useState(0);
   const [timerActive, setTimerActive] = useState(false);
 
-  // Prüfe beim Laden der Komponente, ob eine Zeitbegrenzung aktiv ist
   useEffect(() => {
     checkRateLimit();
   }, []);
 
-  // Timer-Funktion, die den verbleibenden Countdown aktualisiert
   useEffect(() => {
     let interval;
     if (timerActive && timeUntilNextMessage > 0) {
@@ -45,14 +43,12 @@ const ContactPage = () => {
     return () => clearInterval(interval);
   }, [timerActive, timeUntilNextMessage]);
 
-  // Prüft, ob der Benutzer das Rate-Limit erreicht hat
   const checkRateLimit = () => {
     const lastMessageTime = localStorage.getItem('lastMessageTime');
     if (lastMessageTime) {
       const currentTime = new Date().getTime();
       const timeDiff = currentTime - parseInt(lastMessageTime);
-      const waitTime = 600000; // 10 Minuten in Millisekunden
-      
+      const waitTime = 600000;
       if (timeDiff < waitTime) {
         const remainingTime = Math.ceil((waitTime - timeDiff) / 1000);
         setTimeUntilNextMessage(remainingTime);
@@ -63,7 +59,6 @@ const ContactPage = () => {
     return false;
   };
 
-  // Formatiert die verbleibende Zeit in Minuten und Sekunden
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -72,37 +67,29 @@ const ContactPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+    setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Prüfe, ob der Benutzer eine Nachricht senden darf
     if (checkRateLimit()) {
       setSubmitStatus('rate-limited');
       return;
     }
-    
     setIsSubmitting(true);
 
     emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       formRef.current,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
     ).then(() => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Speichere den Zeitstempel der gesendeten Nachricht
+      confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
       localStorage.setItem('lastMessageTime', new Date().getTime().toString());
-      setTimeUntilNextMessage(600); // 10 Minuten in Sekunden
+      setTimeUntilNextMessage(600);
       setTimerActive(true);
-      
     }).catch((error) => {
       console.error('EmailJS error:', error);
       setSubmitStatus('error');
@@ -115,36 +102,29 @@ const ContactPage = () => {
     <section id="contact" className="contact-section">
       <div className="contact-container">
         <div className="contact-header">
-          <h2 className="section-title">Contact</h2>
+          <h2 className="section-title">{t.contact.title}</h2>
         </div>
 
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Let's Connect</h3>
-            <p>Feel free to reach out for collaborations or just to say hi!</p>
+            <h3>{t.contact.connectTitle}</h3>
+            <p>{t.contact.connectDesc}</p>
 
             <div className="contact-details">
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
-                <span>duarte.lavourasreissantos@sunrise.net</span>
-              </div>
-
-              <div className="contact-item">
-                <FaMapMarkerAlt className="contact-icon" />
-                <span>Ambassador House, Glattpark, Zürich</span>
+                <span>contact@duarte-santos.ch</span>
               </div>
             </div>
 
             <div className="contact-social">
               <a
-                href="https://teams.microsoft.com/l/chat/0/0?users=duarte.lavourasreissantos@sunrise.net"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:contact@duarte-santos.ch"
                 className="social-button"
-                aria-label="Contact via Microsoft Teams"
+                aria-label="Send an email"
               >
-                <BsMicrosoftTeams />
-                <span>Teams</span>
+                <FaEnvelope />
+                <span>Email</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/duarte-santos-a82775328/"
@@ -160,13 +140,9 @@ const ContactPage = () => {
           </div>
 
           <div className="contact-form-container">
-            <form 
-              className="contact-form" 
-              onSubmit={handleSubmit}
-              ref={formRef}
-            >
+            <form className="contact-form" onSubmit={handleSubmit} ref={formRef}>
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="name">{t.contact.nameLbl}</label>
                 <input
                   type="text"
                   id="name"
@@ -174,13 +150,13 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Your name"
+                  placeholder={t.contact.namePh}
                   disabled={timerActive}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">{t.contact.emailLbl}</label>
                 <input
                   type="email"
                   id="email"
@@ -188,13 +164,13 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="Your email"
+                  placeholder={t.contact.emailPh}
                   disabled={timerActive}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">{t.contact.subjectLbl}</label>
                 <input
                   type="text"
                   id="subject"
@@ -202,13 +178,13 @@ const ContactPage = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="Subject"
+                  placeholder={t.contact.subjectPh}
                   disabled={timerActive}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t.contact.messageLbl}</label>
                 <div className="textarea-wrapper">
                   <textarea
                     id="message"
@@ -216,7 +192,7 @@ const ContactPage = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    placeholder="Your message"
+                    placeholder={t.contact.messagePh}
                     rows="6"
                     maxLength="500"
                     disabled={timerActive}
@@ -229,7 +205,7 @@ const ContactPage = () => {
 
               {timerActive ? (
                 <div className="rate-limit-notice">
-                  <p>Bitte warte {formatTime(timeUntilNextMessage)} bevor du eine weitere Nachricht sendest.</p>
+                  <p>{t.contact.rateWait(formatTime(timeUntilNextMessage))}</p>
                 </div>
               ) : (
                 <button
@@ -237,26 +213,18 @@ const ContactPage = () => {
                   className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
                   disabled={isSubmitting || timerActive}
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? t.contact.sending : t.contact.send}
                 </button>
               )}
 
               {submitStatus === 'success' && (
-                <div className="form-status success">
-                  Message sent successfully! I'll get back to you soon.
-                </div>
+                <div className="form-status success">{t.contact.success}</div>
               )}
-
               {submitStatus === 'error' && (
-                <div className="form-status error">
-                  There was an error sending your message. Please try again.
-                </div>
+                <div className="form-status error">{t.contact.error}</div>
               )}
-
               {submitStatus === 'rate-limited' && (
-                <div className="form-status warn">
-                  Du kannst nur eine Nachricht alle 10 Minuten senden. Bitte warte.
-                </div>
+                <div className="form-status warn">{t.contact.rateLimited}</div>
               )}
             </form>
           </div>

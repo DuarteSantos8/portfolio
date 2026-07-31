@@ -1,74 +1,151 @@
 {
-    "experiences": [
-      {
-        "company": "BBC Basislehrjahr",
-        "logo": "/assets/logos/bbc-logo.svg",
-        "color": "#009ee3",
-        "position": "Student Developer",
-        "period": "August 2023 - July 2024",
-        "description": "Comprehensive foundational year in IT, covering the core principles of software development, networking, operating systems, databases, security and project management. Built various practical applications using Java, Python and web technologies and gained experience with Spring Boot, MySQL, Firebase and IoT. Learned to work with Agile methods, version control (Git) and gained exposure to full-stack development.",
-        "technologies": ["Java", "Springboot", "Python", "Firebase", "MySQL", "HTML", "CSS", "JavaScript", "React", "IoT", "Expo Go"],
-        "supervisor": {
-          "name": "Michael Hegner",
-          "contact": "michael.hegner@bbcag.ch"
-        }
+  "experiences": [
+    {
+      "company": "BBC Basislehrjahr",
+      "logo": "/assets/logos/bbc-logo.svg",
+      "color": "#009ee3",
+      "position": {
+        "en": "Student Developer",
+        "pt": "Desenvolvedor Estudante",
+        "de": "Entwickler-Praktikant"
       },
-      {
-        "company": "Sunrise GmbH",
-        "logo": "/assets/logos/sunrise-logo.png",
-        "color": "#DA291C",
-        "position": "DAL (Digital Avengers Lab)",
-        "period": "August 2024 - April 2025",
-        "description": "Worked on two major internal projects: MediStock, a full-stack material reservation tool developed with React and Flask and SalesChamp, a B2B-focused CRM enhancement. Focused on frontend development, state management, database design and implementing secure user interactions. Collaborated with designers, backend engineers and business stakeholders in an agile, fast-paced environment. I also worked closely with [@Neo Stutz](https://neo.sunrise-avengers.ch/) and participated in many 'Schnupper Tage' and other outreach events with children interested in our profession. I also had a great time working and learning alongside my fellow apprentices [@Nik Brönnimann](https://nik.sunrise-avengers.ch/), [@Bareth Balakanthan](https://bareth.sunrise-avengers.ch/) and [@Simon Schiller](https://simon.sunrise-avengers.ch/). Together we built, learned, and laughed — and even made our own site at [@Digital Avengers Lab](https://sunrise-avengers.ch).",
-        "technologies": ["React", "JavaScript", "HTML", "CSS", "Firebase", "Flask", "MySQL", "Git", "Vue.js", "JSON Server", "Bootstrap", "Bootstrap"],
-        "supervisor": {
-          "name": "Roman Stammbach",
-          "contact": "roman.stammbach@sunrise.net"
-        }
+      "period": {
+        "en": "August 2023 - July 2024",
+        "pt": "Agosto 2023 - Julho 2024",
+        "de": "August 2023 - Juli 2024"
       },
-      {
-        "company": "Sunrise GmbH",
-        "logo": "/assets/logos/sunrise-logo.png",
-        "color": "#DA291C",
-        "position": "DAL (Digital Avengers Lab) | Stage as Platform Engineer",
-        "period": "May 2025 - July 2025",
-        "description": "During this time, I built a standalone Raspberry Pi router and access point—completely air-gapped—serving a local web portal via custom domains and reverse-proxy rules. I also wrote Bash scripts to continuously ping multiple PCs, funneling those performance metrics into InfluxDB and crafting real-time Grafana dashboards that show per-machine uptime, latency, and bandwidth. If any machine went offline, automated alerting would fire off an email to the administrator. On the network side, I designed and implemented a dual-zone architecture behind a firewall to keep development and operations traffic isolated and secure.",
-        "technologies": ["Linux", "Networking", "Scripting", "Git", "Docker", "Nginx", "Bash", "nmcli", "Raspberry Pi", "Python", "Grafana", "InfluxDB", "VM"],
-        "supervisor": {
-          "name": "Manfred Sauder",
-          "contact": "manfred.sauder@sunrise.net"
-        }
+      "description": {
+        "en": "Comprehensive foundational year in IT, covering the core principles of software development, networking, operating systems, databases, security and project management. Built various practical applications using Java, Python and web technologies and gained experience with Spring Boot, MySQL, Firebase and IoT. Learned to work with Agile methods, version control (Git) and gained exposure to full-stack development.",
+        "pt": "Ano fundamental abrangente em TI, cobrindo os princípios básicos de desenvolvimento de software, redes, sistemas operativos, bases de dados, segurança e gestão de projetos. Construí várias aplicações práticas usando Java, Python e tecnologias web e ganhei experiência com Spring Boot, MySQL, Firebase e IoT. Aprendi a trabalhar com métodos Ágeis, controlo de versões (Git) e obtive exposição ao desenvolvimento full-stack.",
+        "de": "Umfassendes Grundlagenjahr in der IT, das die Kernprinzipien der Softwareentwicklung, Netzwerke, Betriebssysteme, Datenbanken, Sicherheit und Projektmanagement abdeckt. Verschiedene praktische Anwendungen mit Java, Python und Webtechnologien erstellt und Erfahrungen mit Spring Boot, MySQL, Firebase und IoT gesammelt. Agile Methoden und Versionskontrolle (Git) erlernt und Einblicke in die Full-Stack-Entwicklung gewonnen."
       },
-      {
-        "company": "Sunrise GmbH",
-        "logo": "/assets/logos/sunrise-logo.png",
-        "color": "#DA291C",
-        "position": "OMNI Platform",
-        "period": "August 2025 - Present",
-        "description": "[To be written later – focus on Fullstack development, vue.js, Laravel. - Working on the AMP Project]",
-        "technologies": ["Vue.js", "Laravel", "Fullstack", "Git", "JavaScript"],
-        "supervisor": {
-          "name": "Sofiane Benmbarek",
-          "contact": "sofiane.benmbarek@sunrise.net"
-        }
+      "technologies": ["Java", "Springboot", "Python", "Firebase", "MySQL", "HTML", "CSS", "JavaScript", "React", "IoT", "Expo Go"],
+      "supervisor": {
+        "name": "Michael Hegner",
+        "contact": "michael.hegner@bbcag.ch"
       }
-    ],
-    "skillGroups": [
-      {
-        "category": "Frontend",
-        "skills": ["React", "JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap"]
+    },
+    {
+      "company": "Sunrise GmbH",
+      "logo": "/assets/logos/sunrise-logo.png",
+      "color": "#DA291C",
+      "position": {
+        "en": "DAL (Digital Avengers Lab)",
+        "pt": "DAL (Digital Avengers Lab)",
+        "de": "DAL (Digital Avengers Lab)"
       },
-      {
-        "category": "Backend",
-        "skills": ["Python", "Flask", "MySQL", "MongoDB", "Firebase"]
+      "period": {
+        "en": "August 2024 - April 2025",
+        "pt": "Agosto 2024 - Abril 2025",
+        "de": "August 2024 - April 2025"
       },
-      {
-        "category": "Tools & Libraries",
-        "skills": ["Git", "Docker", "Postman", "Expo Go", "Figma", "Canva", "VS Code", "IntelliJ IDEA", "PyCharm"]
+      "description": {
+        "en": "Worked on two major internal projects: MediStock, a full-stack material reservation tool developed with React and Flask and SalesChamp, a B2B-focused CRM enhancement. Focused on frontend development, state management, database design and implementing secure user interactions. Collaborated with designers, backend engineers and business stakeholders in an agile, fast-paced environment. I also worked closely with [@Neo Stutz](https://neo.sunrise-avengers.ch/) and participated in many 'Schnupper Tage' and other outreach events with children interested in our profession. I also had a great time working and learning alongside my fellow apprentices [@Nik Brönnimann](https://nik.sunrise-avengers.ch/), [@Bareth Balakanthan](https://bareth.sunrise-avengers.ch/) and [@Simon Schiller](https://simon.sunrise-avengers.ch/). Together we built, learned, and laughed — and even made our own site at [@Digital Avengers Lab](https://sunrise-avengers.ch).",
+        "pt": "Trabalhei em dois grandes projetos internos: MediStock, uma ferramenta de reserva de material full-stack desenvolvida com React e Flask, e SalesChamp, uma melhoria de CRM focada em B2B. Focado no desenvolvimento frontend, gestão de estado, design de base de dados e implementação de interações seguras com utilizadores. Colaborei com designers, engenheiros de backend e partes interessadas de negócio num ambiente ágil e dinâmico. Também trabalhei de perto com [@Neo Stutz](https://neo.sunrise-avengers.ch/) e participei em muitos 'Schnupper Tage' e outros eventos com crianças interessadas na nossa profissão. Tive também muito prazer em trabalhar e aprender ao lado dos meus colegas aprendizes [@Nik Brönnimann](https://nik.sunrise-avengers.ch/), [@Bareth Balakanthan](https://bareth.sunrise-avengers.ch/) e [@Simon Schiller](https://simon.sunrise-avengers.ch/). Juntos construímos, aprendemos e rimos — e criámos até o nosso próprio site em [@Digital Avengers Lab](https://sunrise-avengers.ch).",
+        "de": "Ich arbeitete an zwei großen internen Projekten: MediStock, einem Full-Stack-Materialreservierungstool mit React und Flask, und SalesChamp, einer B2B-fokussierten CRM-Erweiterung. Schwerpunkt auf Frontend-Entwicklung, State-Management, Datenbankdesign und der Implementierung sicherer Benutzerinteraktionen. Zusammenarbeit mit Designern, Backend-Ingenieuren und Geschäftspartnern in einem agilen, schnelllebigen Umfeld. Ich arbeitete auch eng mit [@Neo Stutz](https://neo.sunrise-avengers.ch/) zusammen und nahm an vielen Schnuppertagen und Outreach-Veranstaltungen mit technologiebegeisterten Kindern teil. Außerdem hatte ich eine tolle Zeit gemeinsam mit meinen Mitauszubildenden [@Nik Brönnimann](https://nik.sunrise-avengers.ch/), [@Bareth Balakanthan](https://bareth.sunrise-avengers.ch/) und [@Simon Schiller](https://simon.sunrise-avengers.ch/). Gemeinsam haben wir gebaut, gelernt und gelacht — und sogar unsere eigene Website bei [@Digital Avengers Lab](https://sunrise-avengers.ch) erstellt."
       },
-      {
-        "category": "OS",
-        "skills": ["MacOS", "Windows 10", "Windows 11", "Linux", "Raspberry Pi OS"]
+      "technologies": ["React", "JavaScript", "HTML", "CSS", "Firebase", "Flask", "MySQL", "Git", "Vue.js", "JSON Server", "Bootstrap"],
+      "supervisor": {
+        "name": "Roman Stammbach",
+        "contact": "roman.stammbach@sunrise.net"
       }
-    ]
-  }
+    },
+    {
+      "company": "Sunrise GmbH",
+      "logo": "/assets/logos/sunrise-logo.png",
+      "color": "#DA291C",
+      "position": {
+        "en": "DAL (Digital Avengers Lab) | Stage as Platform Engineer",
+        "pt": "DAL (Digital Avengers Lab) | Estágio como Engenheiro de Plataforma",
+        "de": "DAL (Digital Avengers Lab) | Praktikum als Platform Engineer"
+      },
+      "period": {
+        "en": "May 2025 - July 2025",
+        "pt": "Maio 2025 - Julho 2025",
+        "de": "Mai 2025 - Juli 2025"
+      },
+      "description": {
+        "en": "During this time, I built a standalone Raspberry Pi router and access point—completely air-gapped—serving a local web portal via custom domains and reverse-proxy rules. I also wrote Bash scripts to continuously ping multiple PCs, funneling those performance metrics into InfluxDB and crafting real-time Grafana dashboards that show per-machine uptime, latency, and bandwidth. If any machine went offline, automated alerting would fire off an email to the administrator. On the network side, I designed and implemented a dual-zone architecture behind a firewall to keep development and operations traffic isolated and secure.",
+        "pt": "Durante este período, construí um router e ponto de acesso Raspberry Pi autónomo — completamente isolado da rede externa — a servir um portal web local via domínios personalizados e regras de reverse-proxy. Também escrevi scripts Bash para fazer ping continuamente a múltiplos PCs, canalizando essas métricas de desempenho para o InfluxDB e criando dashboards Grafana em tempo real com uptime, latência e largura de banda por máquina. Se alguma máquina ficasse offline, alertas automáticos enviavam um e-mail ao administrador. No lado da rede, projetei e implementei uma arquitetura de zona dupla por trás de uma firewall para manter o tráfego de desenvolvimento e operações isolado e seguro.",
+        "de": "In dieser Zeit baute ich einen eigenständigen Raspberry Pi Router und Access Point — vollständig isoliert — der ein lokales Webportal über benutzerdefinierte Domains und Reverse-Proxy-Regeln bereitstellt. Ich schrieb auch Bash-Skripte, um mehrere PCs kontinuierlich zu pingen, die Leistungsdaten in InfluxDB einzuspeisen und Echtzeit-Grafana-Dashboards mit Uptime, Latenz und Bandbreite pro Maschine zu erstellen. Bei einem Ausfall wurden automatisch E-Mail-Benachrichtigungen an den Administrator gesendet. Auf der Netzwerkseite entwarf ich eine Dual-Zone-Architektur hinter einer Firewall, um Entwicklungs- und Betriebsverkehr isoliert und sicher zu halten."
+      },
+      "technologies": ["Linux", "Networking", "Scripting", "Git", "Docker", "Nginx", "Bash", "nmcli", "Raspberry Pi", "Python", "Grafana", "InfluxDB", "VM"],
+      "supervisor": {
+        "name": "Manfred Sauder",
+        "contact": "manfred.sauder@sunrise.net"
+      }
+    },
+    {
+      "company": "Sunrise GmbH",
+      "logo": "/assets/logos/sunrise-logo.png",
+      "color": "#DA291C",
+      "position": {
+        "en": "OMNI Platform",
+        "pt": "Plataforma OMNI",
+        "de": "OMNI-Plattform"
+      },
+      "period": {
+        "en": "August 2025 - January 2026",
+        "pt": "Agosto 2025 - Janeiro 2026",
+        "de": "August 2025 - Januar 2026"
+      },
+      "description": {
+        "en": "Worked as part of the OMNI Channel team on full-stack development, contributing to the AMP Project. Focused on building and maintaining features using Vue.js and Laravel, collaborating closely with cross-functional teams in an agile environment.",
+        "pt": "Trabalhei como parte da equipa OMNI Channel no desenvolvimento full-stack, contribuindo para o Projeto AMP. Focado na criação e manutenção de funcionalidades usando Vue.js e Laravel, colaborando estreitamente com equipas multifuncionais num ambiente ágil.",
+        "de": "Ich arbeitete als Teil des OMNI-Channel-Teams an der Full-Stack-Entwicklung und trug zum AMP-Projekt bei. Schwerpunkt auf dem Aufbau und der Pflege von Features mit Vue.js und Laravel, in enger Zusammenarbeit mit cross-funktionalen Teams in einem agilen Umfeld."
+      },
+      "technologies": ["Vue.js", "Laravel", "Fullstack", "Git", "JavaScript"],
+      "supervisor": {
+        "name": "Sofiane Benmbarek",
+        "contact": "sofiane.benmbarek@sunrise.net"
+      }
+    },
+    {
+      "company": "Sunrise GmbH",
+      "logo": "/assets/logos/sunrise-logo.png",
+      "color": "#DA291C",
+      "position": {
+        "en": "CRP Team",
+        "pt": "Equipa CRP",
+        "de": "CRP-Team"
+      },
+      "period": {
+        "en": "February 2026 - Present",
+        "pt": "Fevereiro 2026 - Presente",
+        "de": "Februar 2026 - Aktuell"
+      },
+      "description": {
+        "en": "Currently responsible for multiple KPI dashboards under the CIO, providing data-driven insights across the organization. Manage the monthly data upload process to ensure dashboards remain accurate and up to date. The entire infrastructure runs on Google Cloud Platform (GCP), giving me hands-on experience with Google Cloud Storage (Buckets), Cloud Instances and broader GCP services.",
+        "pt": "Atualmente responsável por múltiplos dashboards de KPI sob o CIO, fornecendo insights baseados em dados em toda a organização. Giro o processo mensal de carregamento de dados para garantir que os dashboards se mantêm precisos e atualizados. Toda a infraestrutura corre no Google Cloud Platform (GCP), dando-me experiência prática com Google Cloud Storage (Buckets), Cloud Instances e serviços GCP em geral.",
+        "de": "Aktuell verantwortlich für mehrere KPI-Dashboards unter dem CIO und liefere datengestützte Einblicke für die gesamte Organisation. Verwalte den monatlichen Daten-Upload-Prozess, um die Genauigkeit und Aktualität der Dashboards sicherzustellen. Die gesamte Infrastruktur läuft auf der Google Cloud Platform (GCP) und gibt mir praktische Erfahrung mit Google Cloud Storage, Cloud-Instanzen und weiteren GCP-Diensten."
+      },
+      "technologies": ["GCP", "Google Cloud Storage", "Python", "SQL", "Git"],
+      "supervisor": {
+        "name": "Elisa Desiderio",
+        "contact": "elisa.desiderio@sunrise.net"
+      }
+    }
+  ],
+  "skillGroups": [
+    {
+      "category": { "en": "Frontend", "pt": "Frontend", "de": "Frontend" },
+      "skills": ["React", "JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap"]
+    },
+    {
+      "category": { "en": "Backend", "pt": "Backend", "de": "Backend" },
+      "skills": ["Python", "Flask", "MySQL", "MongoDB", "Firebase", "Laravel"]
+    },
+    {
+      "category": { "en": "Tools & Libraries", "pt": "Ferramentas & Bibliotecas", "de": "Tools & Bibliotheken" },
+      "skills": ["Git", "Docker", "Postman", "Expo Go", "Figma", "Canva", "VS Code", "IntelliJ IDEA", "PyCharm", "Grafana", "InfluxDB"]
+    },
+    {
+      "category": { "en": "Cloud & Infrastructure", "pt": "Cloud & Infraestrutura", "de": "Cloud & Infrastruktur" },
+      "skills": ["GCP", "Google Cloud Storage", "Nginx", "Raspberry Pi OS", "Linux", "Docker"]
+    },
+    {
+      "category": { "en": "OS", "pt": "Sistema Operativo", "de": "Betriebssystem" },
+      "skills": ["MacOS", "Windows 10", "Windows 11", "Linux", "Raspberry Pi OS"]
+    }
+  ]
+}
