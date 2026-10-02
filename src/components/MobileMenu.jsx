@@ -5,6 +5,7 @@ import { FaLinkedin, FaEnvelope, FaGithub } from "react-icons/fa";
 import { ThemeContext } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
 import LanguagePicker from './LanguagePicker';
+import EmailLink from './EmailLink';
 import './MobileMenu.css';
 
 const MobileMenu = () => {
@@ -76,9 +77,9 @@ const MobileMenu = () => {
             <a href="https://github.com/DuarteSantos8" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="GitHub">
               <FaGithub size={35} />
             </a>
-            <a href="mailto:contact@duarte-santos.ch" className="social-link" aria-label="Email">
+            <EmailLink className="social-link">
               <FaEnvelope size={35} />
-            </a>
+            </EmailLink>
           </div>
 
           <div className="copyright-notice">

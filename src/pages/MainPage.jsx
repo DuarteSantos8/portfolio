@@ -4,6 +4,7 @@ import './MainPage.css';
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import '@fontsource/roboto-mono';
 import { useLanguage } from '../context/LanguageContext';
+import EmailLink from '../components/EmailLink';
 
 const HeroSection = () => {
     const { language, t } = useLanguage();
@@ -144,13 +145,9 @@ const HeroSection = () => {
                         >
                             <FaInstagram size={35} />
                         </a>
-                        <a
-                            href="mailto:contact@duarte-santos.ch"
-                            className="social-link"
-                            aria-label="Email"
-                        >
+                        <EmailLink className="social-link">
                             <FaEnvelope size={35}/>
-                        </a>
+                        </EmailLink>
                     </div>
                 </div>
             </div>

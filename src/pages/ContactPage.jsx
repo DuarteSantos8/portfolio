@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 import confetti from 'canvas-confetti';
+import EmailLink, { EMAIL } from '../components/EmailLink';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -113,19 +114,15 @@ const ContactPage = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <FaEnvelope className="contact-icon" />
-                <span>contact@duarte-santos.ch</span>
+                <span>{EMAIL}</span>
               </div>
             </div>
 
             <div className="contact-social">
-              <a
-                href="mailto:contact@duarte-santos.ch"
-                className="social-button"
-                aria-label="Send an email"
-              >
+              <EmailLink className="social-button" ariaLabel="Send an email">
                 <FaEnvelope />
                 <span>Email</span>
-              </a>
+              </EmailLink>
               <a
                 href="https://www.linkedin.com/in/duarte-santos-a82775328/"
                 target="_blank"

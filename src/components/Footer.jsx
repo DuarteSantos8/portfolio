@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import EmailLink from './EmailLink';
 import './Footer.css';
 
 const Footer = () => {
@@ -36,9 +37,9 @@ const Footer = () => {
               <a href="https://www.instagram.com/duarte.zh/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
                 <FaInstagram />
               </a>
-              <a href="mailto:contact@duarte-santos.ch" className="footer-social-link" aria-label="Email">
+              <EmailLink className="footer-social-link">
                 <FaEnvelope />
-              </a>
+              </EmailLink>
             </div>
           </div>
         </div>

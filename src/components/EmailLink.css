@@ -1,0 +1,40 @@
+.email-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translateX(-50%);
+  z-index: 3000;
+  max-width: calc(100vw - 32px);
+  padding: 10px 18px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+  background: var(--color-text-dark);
+  color: var(--color-background-dark);
+  font-size: 0.95rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  animation: email-toast-in 0.2s ease-out;
+}
+
+.email-toast-address {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.light-theme .email-toast {
+  background: var(--color-text-light);
+  color: var(--color-background-light);
+}
+
+@keyframes email-toast-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .email-toast { animation: none; }
+}
