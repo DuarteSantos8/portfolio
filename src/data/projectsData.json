@@ -7,7 +7,7 @@
       "de": "Ein einfach zu bedienendes Reservierungstool für das Multi-Media-Team von Sunrise zur effizienten Verwaltung und Buchung von Ausrüstung. Entwickelt mit einem React-Frontend, einer Flask-REST-API und einer MySQL-Datenbank mit Firebase-Authentifizierung."
     },
     "technologies": ["JavaScript", "Python", "HTML", "CSS", "React", "Flask", "MySQL", "Firebase"],
-    "githubLink": "https://git.sunrise-avengers.ch/appli/medistock-frontend",
+    "repoLink": "https://git.sunrise-avengers.ch/appli/medistock-frontend",
     "demoLink": "https://medistock.sunrise-avengers.ch/",
     "category": "Professional",
     "date": {
@@ -32,7 +32,7 @@
       "de": "Ein Echtzeit-Dashboard zur Punkteverfolgung für Sunrise-Vertriebsmitarbeiter, das Qlik-Analysen mit einem benutzerdefinierten Vue.js-Frontend integriert, um individuelle und Team-Leistungskennzahlen zu visualisieren."
     },
     "technologies": ["JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap", "Qlik", "JSON Server"],
-    "githubLink": "https://git.sunrise-avengers.ch/appli/saleschamp-frontend",
+    "repoLink": "https://git.sunrise-avengers.ch/appli/saleschamp-frontend",
     "demoLink": "https://saleschamp.sunrise-avengers.ch/",
     "category": "Professional",
     "date": {
@@ -50,7 +50,7 @@
       "de": "Ein Software-KPI-Dashboard für die CIO-Organisation, gehostet auf der Google Cloud Platform. Das Flask-Backend verbindet sich über den oracledb-Treiber mit einer Oracle-Datenbank und stellt REST-Endpunkte bereit, die von einem Chart.js-Frontend mit mehrseitigen Visualisierungen und einer eingebetteten Wiki-Sidebar genutzt werden."
     },
     "technologies": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Professional",
     "date": {
@@ -68,7 +68,7 @@
       "de": "Automatisierte Überwachungspipeline für mehrere PCs im Sunrise-Netzwerk. Ein Bash-Skript pingt jeden Host, prüft die Port-Verfügbarkeit via Telnet, speichert Ergebnisse in InfluxDB und visualisiert Uptime und Latenz in Grafana. Läuft jede Minute via Cron mit E-Mail-Benachrichtigungen bei Ausfällen."
     },
     "technologies": ["Bash", "Ping", "Telnet", "InfluxDB", "Grafana", "Cron", "Linux"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Professional",
     "date": {
@@ -92,7 +92,7 @@
       "de": "Aufbau eines vollständig isolierten Raspberry Pi Routers und Access Points, der ein lokales Webportal über benutzerdefinierte Domains und Nginx Reverse-Proxy-Regeln bereitstellt. Implementierung einer Dual-Zone-Firewall-Architektur zur Trennung von Entwicklungs- und Betriebsverkehr."
     },
     "technologies": ["Linux", "Networking", "Raspberry Pi", "Nginx", "Bash", "Docker"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Professional",
     "date": {
@@ -110,7 +110,7 @@
       "de": "Website für André Lavouras Santos, Advogados — eine Anwaltskanzlei in Maia, Portugal, geführt von meinem Bruder. Erstellt mit einem React-Frontend und mehrsprachiger Unterstützung (Portugiesisch, Englisch, Deutsch), die die sieben Fachgebiete der Kanzlei, das Team und einen eingebetteten Google-Maps-Standort präsentiert. Enthält ein Kontaktformular zur Buchung von Beratungsgesprächen mit Spam-Schutz."
     },
     "technologies": ["JavaScript", "React", "HTML", "CSS", "i18n"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "https://www.als-advogados.pt/",
     "category": "Personal",
     "date": {
@@ -130,7 +130,7 @@
       "de": "Kundenorientierte Webanwendung, erstellt mit React und einer JSON-basierten Datenschicht (ohne Datenbank). Leichtgewichtige Architektur mit Fokus auf schnelle Ladezeiten und einfache Inhaltsaktualisierungen, mit Drittanbieter-CAPTCHA-Integration für Spam-Schutz auf Benutzerformularen."
     },
     "technologies": ["JavaScript", "React", "HTML", "CSS"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "https://litho.ch/",
     "category": "Personal",
     "date": {
@@ -154,7 +154,7 @@
       "de": "Echtzeit-Anwendung, die Handgesten mithilfe von Computer Vision in Text umwandelt. Ein benutzerdefiniertes ML-Modell wurde trainiert, um Handzeichen aus einem Webcam-Feed mithilfe von MediaPipe und OpenCV zur Landmarken-Erkennung zu identifizieren."
     },
     "technologies": ["Python", "OpenCV", "virtualenv", "CVZone", "NumPy", "MediaPipe"],
-    "githubLink": "https://github.com/DuarteSantos8/Hand-recognition",
+    "repoLink": "https://github.com/DuarteSantos8/Hand-recognition",
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -172,7 +172,7 @@
       "de": "Selbst gehostetes Heimlabor auf einem HP EliteDesk. Mehrere Websites hinter eigenen Domains, sicher über Cloudflare Tunnel exponiert. Dienste laufen als isolierte Docker-Container hinter einem Nginx Reverse Proxy mit automatischen Neustart-Richtlinien."
     },
     "technologies": ["Linux", "Docker", "Nginx", "Bash", "Networking"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -190,7 +190,7 @@
       "de": "Aufbau einer voll funktionsfähigen Arcade-Machine von Grund auf als Abschlussprojekt an der Sekundarschule mit der Note 6 — der höchstmöglichen Bewertung. Leitung einer vierköpfigen Gruppe: Aufgabenverteilung, Materialbeschaffung, Sicherung des Arbeitsplatzes und vollständige Verantwortung für den Projektplan. Der Bau umfasste Schreinerei, Elektronikverkabelung und Lackierung vor einer Live-Präsentation vor der Schule."
     },
     "technologies": ["Woodworking", "Electronics", "Wiring", "Project Management"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -219,7 +219,7 @@
       "de": "Eine Twint-inspirierte mobile Zahlungs-App als Schulprojekt am BBC. Unterstützt das Senden und Empfangen von Geld per Benutzersuche oder QR-Code-Scan, Echtzeit-Transaktionshistorie, mehrere Kontotypen (Spar-, Giro-, Anlagekonto), Ausgabenlimits, Profilverwaltung, Dunkelmodus und Lokalisierung auf Deutsch, Englisch und Chinesisch. Erstellt mit einem React Native Frontend und einer Node.js/Express REST API mit PostgreSQL."
     },
     "technologies": ["React Native", "Node.js", "JavaScript", "Firebase", "PostgreSQL"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -248,7 +248,7 @@
       "de": "Eine WhatsApp-ähnliche mobile Messaging-App für ÜK 335 mit der Note 6 — dem Maximum. Verwendet E-Mail-Adressen statt Telefonnummern als Identität. Funktionen: Kontoerstellung, Direktnachrichten, Gruppenchats mit Benutzerliste und Verlassoption, Profilanpassung (Benutzername, Bio, Profilbild) und Nachrichtenlöschung."
     },
     "technologies": ["React Native", "Firebase", "JavaScript"],
-    "githubLink": null,
+    "repoLink": null,
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -278,7 +278,7 @@
       "de": "Ein Kameramodul und ein PIR-Bewegungssensor wurden an einen Raspberry Pi 4 angeschlossen. Bei Bewegungserkennung nimmt die Kamera ein Foto auf und sendet es über einen Telegram-Bot. Der Fernzugriff erfolgt über OpenVPN."
     },
     "technologies": ["Python", "Raspberry Pi OS", "Raspberry Pi Camera Module", "PIR Motion Sensor", "RPi.GPIO", "Telegram Bot API", "OpenVPN"],
-    "githubLink": "https://github.com/DuarteSantos8",
+    "repoLink": null,
     "demoLink": "",
     "category": "Personal",
     "date": {
@@ -291,14 +291,16 @@
   {
     "name": "openGym",
     "description": {
-      "en": "A self-hosted gym and body-weight tracker you actually own. Plan a weekly routine from a library of 1,300+ exercises, run guided workouts with a rest timer and automatic PR detection (supersets and cardio included), and track your body weight and progress over time with an activity heatmap and muscle map. Installable as a PWA with passkey (Face ID / fingerprint) login, offline support, cross-device sync, and 12-language localisation — all running on your own server via Docker, with no accounts, subscriptions, or telemetry.",
-      "pt": "Um registo de treino e peso corporal auto-hospedado que é verdadeiramente teu. Planeia uma rotina semanal a partir de uma biblioteca de mais de 1300 exercícios, faz treinos guiados com temporizador de descanso e deteção automática de recordes (incluindo supersets e cardio), e acompanha o teu peso e progresso ao longo do tempo com um mapa de atividade e mapa muscular. Instalável como PWA com login por passkey (Face ID / impressão digital), suporte offline, sincronização entre dispositivos e localização em 12 idiomas — tudo a correr no teu próprio servidor via Docker, sem contas, subscrições ou telemetria.",
-      "de": "Ein selbst gehosteter Gym- und Körpergewichts-Tracker, der wirklich dir gehört. Plane eine Wochenroutine aus einer Bibliothek mit über 1300 Übungen, absolviere geführte Workouts mit Pausen-Timer und automatischer PR-Erkennung (inklusive Supersätzen und Cardio) und verfolge dein Körpergewicht und deinen Fortschritt mit Aktivitäts-Heatmap und Muskelkarte. Installierbar als PWA mit Passkey-Login (Face ID / Fingerabdruck), Offline-Unterstützung, geräteübergreifender Synchronisation und Lokalisierung in 12 Sprachen — alles läuft auf deinem eigenen Server via Docker, ohne Konten, Abonnements oder Telemetrie."
+      "en": "A self-hosted gym and body-weight tracker you actually own. Plan a weekly routine from a library of 1,300+ exercises, run guided workouts with a rest timer and automatic PR detection (supersets and cardio included), and track your body weight and progress over time with an activity heatmap and muscle map. Installable as a PWA with passkey (Face ID / fingerprint) login, offline support, cross-device sync, and a 13-language interface — or as a standalone Android APK that keeps everything on the phone. All of it runs on your own server via Docker, with no accounts, subscriptions, or telemetry.",
+      "pt": "Um registo de treino e peso corporal auto-hospedado que é verdadeiramente teu. Planeia uma rotina semanal a partir de uma biblioteca de mais de 1300 exercícios, faz treinos guiados com temporizador de descanso e deteção automática de recordes (incluindo supersets e cardio), e acompanha o teu peso e progresso ao longo do tempo com um mapa de atividade e mapa muscular. Instalável como PWA com login por passkey (Face ID / impressão digital), suporte offline, sincronização entre dispositivos e interface em 13 idiomas — ou como APK Android autónomo que guarda tudo no telemóvel. Corre tudo no teu próprio servidor via Docker, sem contas, subscrições ou telemetria.",
+      "de": "Ein selbst gehosteter Gym- und Körpergewichts-Tracker, der wirklich dir gehört. Plane eine Wochenroutine aus einer Bibliothek mit über 1300 Übungen, absolviere geführte Workouts mit Pausen-Timer und automatischer PR-Erkennung (inklusive Supersätzen und Cardio) und verfolge dein Körpergewicht und deinen Fortschritt mit Aktivitäts-Heatmap und Muskelkarte. Installierbar als PWA mit Passkey-Login (Face ID / Fingerabdruck), Offline-Unterstützung, geräteübergreifender Synchronisation und Oberfläche in 13 Sprachen — oder als eigenständige Android-APK, die alles auf dem Handy behält. Alles läuft auf deinem eigenen Server via Docker, ohne Konten, Abonnements oder Telemetrie."
     },
-    "technologies": ["React", "JavaScript", "Node.js", "Vite", "Docker", "Nginx", "WebAuthn", "PWA"],
-    "githubLink": "https://github.com/DuarteSantos8/openGym",
-    "githubRepo": "DuarteSantos8/openGym",
-    "demoLink": "https://opengym.duarte-santos.ch/",
+    "technologies": ["React", "JavaScript", "Node.js", "Vite", "Docker", "Nginx", "WebAuthn", "PWA", "Capacitor", "Android"],
+    "repoLink": "https://github.com/DuarteSantos8/openGym",
+    "repoHost": "github",
+    "starsRepo": "DuarteSantos8/openGym",
+    "siteLink": "https://opengym.duarte-santos.ch/",
+    "demoLink": "https://opengym.duarte-santos.ch/demo/",
     "category": "Personal",
     "date": {
       "en": "July 2026 - Present",

@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const CACHE_TTL = 60 * 60 * 1000; // 1 hour — avoids hammering GitHub's unauthenticated rate limit
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour — avoids hammering the unauthenticated rate limits
+
+// Beide APIs sind anonym lesbar und schicken CORS-Header.
+const HOSTS = {
+  github: {
+    api: repo => `https://api.github.com/repos/${repo}`,
+    stars: data => data.stargazers_count,
+    web: repo => `https://github.com/${repo}`,
+  },
+  gitlab: {
+    api: repo => `https://gitlab.com/api/v4/projects/${encodeURIComponent(repo)}`,
+    stars: data => data.star_count,
+    web: repo => `https://gitlab.com/${repo}`,
+  },
+};
 
 const readCache = (key) => {
   try {
@@ -14,13 +28,14 @@ const readCache = (key) => {
   }
 };
 
-const GithubStars = ({ repo, label = 'GitHub stars' }) => {
+const RepoStars = ({ repo, host = 'github', href, label = 'stars' }) => {
   const [stars, setStars] = useState(null);
+  const provider = HOSTS[host];
 
   useEffect(() => {
-    if (!repo) return undefined;
+    if (!repo || !provider) return undefined;
 
-    const cacheKey = `gh-stars:${repo}`;
+    const cacheKey = `repo-stars:${host}:${repo}`;
     const cached = readCache(cacheKey);
     if (cached != null) {
       setStars(cached);
@@ -28,11 +43,11 @@ const GithubStars = ({ repo, label = 'GitHub stars' }) => {
     }
 
     let cancelled = false;
-    fetch(`https://api.github.com/repos/${repo}`)
+    fetch(provider.api(repo))
       .then(res => (res.ok ? res.json() : Promise.reject(res.status)))
       .then(data => {
         if (cancelled) return;
-        const count = data.stargazers_count ?? 0;
+        const count = provider.stars(data) ?? 0;
         setStars(count);
         try {
           sessionStorage.setItem(cacheKey, JSON.stringify({ count, ts: Date.now() }));
@@ -45,23 +60,25 @@ const GithubStars = ({ repo, label = 'GitHub stars' }) => {
       });
 
     return () => { cancelled = true; };
-  }, [repo]);
+  }, [repo, host, provider]);
 
   if (stars == null) return null;
 
+  const count = stars.toLocaleString();
+
   return (
     <a
-      href={`https://github.com/${repo}`}
+      href={href || provider.web(repo)}
       target="_blank"
       rel="noopener noreferrer"
       className="project-stars"
-      title={label}
-      aria-label={`${stars} ${label}`}
+      title={`${count} ${label}`}
+      aria-label={`${count} ${label}`}
     >
       <FaStar className="project-stars-icon" />
-      {stars.toLocaleString()}
+      {count}
     </a>
   );
 };
 
-export default GithubStars;
+export default RepoStars;

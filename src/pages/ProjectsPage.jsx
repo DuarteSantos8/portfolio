@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import loc from '../utils/loc';
-import { FaGitlab, FaGithub, FaExternalLinkAlt, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs, FaRaspberryPi, FaCamera, FaNetworkWired, FaTelegram, FaClock, FaLinux, FaDocker, FaHammer, FaMicrochip, FaPlug, FaTasks } from 'react-icons/fa';
-import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe, SiGnubash, SiGrafana, SiInfluxdb, SiNginx, SiNodedotjs, SiVite, SiPwa, SiWebauthn } from 'react-icons/si';
+import { FaGitlab, FaGithub, FaExternalLinkAlt, FaGlobe, FaTerminal, FaCode, FaReact, FaPython, FaHtml5, FaCss3Alt, FaVuejs, FaJs, FaRaspberryPi, FaCamera, FaNetworkWired, FaTelegram, FaClock, FaLinux, FaDocker, FaHammer, FaMicrochip, FaPlug, FaTasks } from 'react-icons/fa';
+import { SiFlask, SiOpenvpn, SiMysql, SiFirebase, SiBootstrap, SiQlik, SiOpencv, SiNumpy, SiMediapipe, SiGnubash, SiGrafana, SiInfluxdb, SiNginx, SiNodedotjs, SiVite, SiPwa, SiWebauthn, SiCapacitor, SiAndroid } from 'react-icons/si';
 import { MdSensors } from "react-icons/md";
 import { LuFileJson2 } from "react-icons/lu";
 import './ProjectsPage.css';
 import projectsData from '../data/projectsData.json';
 import ProjectImageCarousel from '../components/ProjectImageCarousel';
-import GithubStars from '../components/GithubStars';
+import RepoStars from '../components/RepoStars';
 
 const TechnologyIcons = {
   'React': FaReact, 'JavaScript': FaJs, 'Python': FaPython, 'HTML': FaHtml5,
@@ -25,6 +25,27 @@ const TechnologyIcons = {
   'Woodworking': FaHammer, 'Electronics': FaMicrochip,
   'Wiring': FaPlug, 'Project Management': FaTasks,
   'Node.js': SiNodedotjs, 'Vite': SiVite, 'PWA': SiPwa, 'WebAuthn': SiWebauthn,
+  'Capacitor': SiCapacitor, 'Android': SiAndroid,
+};
+
+const RepoIcons = { github: FaGithub, gitlab: FaGitlab };
+
+// Ohne repoHost gilt die Faustregel: Arbeitsprojekte liegen im DAL-GitLab,
+// private auf GitHub. repoHost ueberschreibt das pro Projekt.
+const repoHostOf = (project) =>
+  project.repoHost || (project.category === 'Professional' ? 'gitlab' : 'github');
+
+const RepoLink = ({ project, t }) => {
+  const Icon = RepoIcons[repoHostOf(project)] || FaGithub;
+  const label = project.category === 'Professional'
+    ? t.projects.gitlabLabel
+    : repoHostOf(project) === 'gitlab' ? t.projects.gitlabPublicLabel : t.projects.githubLabel;
+
+  return (
+    <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="project-link">
+      <Icon /> {label}
+    </a>
+  );
 };
 
 // Monatsnamen selbst auflösen statt new Date(str): Safari/iOS parst
@@ -142,10 +163,10 @@ const ProjectsPage = () => {
               <div className="project-date">{loc(project.date, language)}</div>
 
               <div className="project-links">
-                {project.githubLink && (
-                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
-                    {project.category === 'Professional' ? <FaGitlab /> : <FaGithub />}
-                    {project.category === 'Professional' ? t.projects.gitlabLabel : t.projects.githubLabel}
+                {project.repoLink && <RepoLink project={project} t={t} />}
+                {project.siteLink && (
+                  <a href={project.siteLink} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <FaGlobe /> {t.projects.websiteLabel}
                   </a>
                 )}
                 {project.demoLink && (
@@ -153,8 +174,13 @@ const ProjectsPage = () => {
                     <FaExternalLinkAlt /> {t.projects.demoLabel}
                   </a>
                 )}
-                {project.githubRepo && (
-                  <GithubStars repo={project.githubRepo} label={t.projects.starsLabel} />
+                {project.starsRepo && (
+                  <RepoStars
+                    repo={project.starsRepo}
+                    host={repoHostOf(project)}
+                    href={project.repoLink}
+                    label={t.projects.starsLabel}
+                  />
                 )}
               </div>
             </div>

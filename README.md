@@ -55,7 +55,7 @@ Some of what's in there:
 
 | Project | What it is |
 |---|---|
-| [**openGym**](https://opengym.duarte-santos.ch/) | Self-hosted gym & body-weight tracker — 1,300+ exercises, PWA with passkey login, 12 languages. Open source. |
+| [**openGym**](https://opengym.duarte-santos.ch/) | Self-hosted gym & body-weight tracker — 1,300+ exercises, PWA with passkey login, 13 languages, Android APK. Open source ([GitHub](https://github.com/DuarteSantos8/openGym)). |
 | [**ALS Advogados**](https://www.als-advogados.pt/) | Multilingual website for a law firm in Maia, Portugal. |
 | [**Litho**](https://litho.ch/) | Client-facing React app on a JSON data layer, no database. |
 | [**MediStock**](https://medistock.sunrise-avengers.ch/) | Equipment reservation tool for Sunrise's Multi Media Team — React, Flask REST API, MySQL. |
