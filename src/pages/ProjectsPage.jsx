@@ -82,10 +82,11 @@ const projectRank = (project) => {
 const desc = (a, b) => (a === b ? 0 : (b > a ? 1 : -1));
 
 // Neustes zuerst: primär nach Startdatum, bei Gleichstand entscheidet das Enddatum
-// (laufende Projekte "… - Present" landen damit oben).
+// (laufende Projekte "… - Present" landen damit oben). "featured" steht immer ganz oben.
 const sortedProjects = [...projectsData]
   .map(project => ({ project, rank: projectRank(project) }))
-  .sort((a, b) => desc(a.rank.start, b.rank.start) || desc(a.rank.end, b.rank.end))
+  .sort((a, b) => desc(!!a.project.featured, !!b.project.featured)
+    || desc(a.rank.start, b.rank.start) || desc(a.rank.end, b.rank.end))
   .map(entry => entry.project);
 
 const ProjectsPage = () => {
@@ -140,12 +141,28 @@ const ProjectsPage = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.name}
-              className="project-card"
+              className={`project-card${project.featured ? ' featured' : ''}`}
               style={{ '--animation-order': index }}
             >
-              <ProjectImageCarousel images={project.images} />
+              {project.featured ? (
+                <div className="featured-shots">
+                  {project.images.map((src, i) => (
+                    <img key={src} src={src} alt={`${project.name} screenshot ${i + 1}`} loading="lazy" />
+                  ))}
+                </div>
+              ) : (
+                <ProjectImageCarousel images={project.images} />
+              )}
+              <div className="project-body">
+              {project.featured && <span className="featured-badge">{t.projects.featuredLabel}</span>}
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{loc(project.description, language)}</p>
+
+              {project.highlights && (
+                <ul className="featured-highlights">
+                  {loc(project.highlights, language).map(h => <li key={h}>{h}</li>)}
+                </ul>
+              )}
 
               <div className="project-technologies">
                 {project.technologies.map(tech => {
@@ -182,6 +199,7 @@ const ProjectsPage = () => {
                     label={t.projects.starsLabel}
                   />
                 )}
+              </div>
               </div>
             </div>
           ))}

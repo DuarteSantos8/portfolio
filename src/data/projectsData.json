@@ -6,7 +6,16 @@
       "pt": "Uma ferramenta de reserva fácil de usar para a equipa Multi Media da Sunrise, para gerir e reservar equipamento de forma eficiente. Construída com um frontend React, API REST Flask e base de dados MySQL com autenticação Firebase.",
       "de": "Ein einfach zu bedienendes Reservierungstool für das Multi-Media-Team von Sunrise zur effizienten Verwaltung und Buchung von Ausrüstung. Entwickelt mit einem React-Frontend, einer Flask-REST-API und einer MySQL-Datenbank mit Firebase-Authentifizierung."
     },
-    "technologies": ["JavaScript", "Python", "HTML", "CSS", "React", "Flask", "MySQL", "Firebase"],
+    "technologies": [
+      "JavaScript",
+      "Python",
+      "HTML",
+      "CSS",
+      "React",
+      "Flask",
+      "MySQL",
+      "Firebase"
+    ],
     "repoLink": "https://git.sunrise-avengers.ch/appli/medistock-frontend",
     "demoLink": "https://medistock.sunrise-avengers.ch/",
     "category": "Professional",
@@ -31,7 +40,15 @@
       "pt": "Um dashboard de acompanhamento de pontos em tempo real para agentes de vendas da Sunrise, integrando análises Qlik com um frontend Vue.js personalizado para visualizar métricas de desempenho individuais e de equipa.",
       "de": "Ein Echtzeit-Dashboard zur Punkteverfolgung für Sunrise-Vertriebsmitarbeiter, das Qlik-Analysen mit einem benutzerdefinierten Vue.js-Frontend integriert, um individuelle und Team-Leistungskennzahlen zu visualisieren."
     },
-    "technologies": ["JavaScript", "HTML", "CSS", "Vue.js", "Bootstrap", "Qlik", "JSON Server"],
+    "technologies": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Vue.js",
+      "Bootstrap",
+      "Qlik",
+      "JSON Server"
+    ],
     "repoLink": "https://git.sunrise-avengers.ch/appli/saleschamp-frontend",
     "demoLink": "https://saleschamp.sunrise-avengers.ch/",
     "category": "Professional",
@@ -49,7 +66,13 @@
       "pt": "Dashboard de KPI de software construído para a organização do CIO, alojado no Google Cloud Platform. O backend Flask liga-se a uma base de dados Oracle através do driver oracledb e expõe endpoints REST consumidos por um frontend Chart.js com visualizações multi-painel e uma barra lateral wiki integrada.",
       "de": "Ein Software-KPI-Dashboard für die CIO-Organisation, gehostet auf der Google Cloud Platform. Das Flask-Backend verbindet sich über den oracledb-Treiber mit einer Oracle-Datenbank und stellt REST-Endpunkte bereit, die von einem Chart.js-Frontend mit mehrseitigen Visualisierungen und einer eingebetteten Wiki-Sidebar genutzt werden."
     },
-    "technologies": ["Python", "Flask", "JavaScript", "HTML", "CSS"],
+    "technologies": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Professional",
@@ -67,7 +90,15 @@
       "pt": "Pipeline de monitorização automatizada para múltiplos PCs na rede Sunrise. Um script Bash faz ping a cada host, verifica a disponibilidade de portas via Telnet, armazena resultados no InfluxDB e visualiza uptime e latência no Grafana. Corre a cada minuto via cron com alertas por e-mail em caso de falhas.",
       "de": "Automatisierte Überwachungspipeline für mehrere PCs im Sunrise-Netzwerk. Ein Bash-Skript pingt jeden Host, prüft die Port-Verfügbarkeit via Telnet, speichert Ergebnisse in InfluxDB und visualisiert Uptime und Latenz in Grafana. Läuft jede Minute via Cron mit E-Mail-Benachrichtigungen bei Ausfällen."
     },
-    "technologies": ["Bash", "Ping", "Telnet", "InfluxDB", "Grafana", "Cron", "Linux"],
+    "technologies": [
+      "Bash",
+      "Ping",
+      "Telnet",
+      "InfluxDB",
+      "Grafana",
+      "Cron",
+      "Linux"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Professional",
@@ -91,7 +122,14 @@
       "pt": "Construí um router e ponto de acesso Raspberry Pi completamente isolado, a servir um portal web local via domínios personalizados e regras de reverse-proxy Nginx. Implementei uma arquitetura de firewall de zona dupla para isolar o tráfego de desenvolvimento e operações.",
       "de": "Aufbau eines vollständig isolierten Raspberry Pi Routers und Access Points, der ein lokales Webportal über benutzerdefinierte Domains und Nginx Reverse-Proxy-Regeln bereitstellt. Implementierung einer Dual-Zone-Firewall-Architektur zur Trennung von Entwicklungs- und Betriebsverkehr."
     },
-    "technologies": ["Linux", "Networking", "Raspberry Pi", "Nginx", "Bash", "Docker"],
+    "technologies": [
+      "Linux",
+      "Networking",
+      "Raspberry Pi",
+      "Nginx",
+      "Bash",
+      "Docker"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Professional",
@@ -105,11 +143,17 @@
   {
     "name": "ALS Advogados",
     "description": {
-      "en": "Website for André Lavouras Santos, Advogados — a law firm in Maia, Portugal run by my brother. Built with a React frontend and multilingual support (Portuguese, English, German), presenting the firm's seven practice areas, team, and an embedded Google Maps location. Includes a contact form for booking consultations with spam protection.",
-      "pt": "Website para André Lavouras Santos, Advogados — uma sociedade de advogados na Maia, Portugal, dirigida pelo meu irmão. Construído com um frontend React e suporte multilingue (português, inglês, alemão), apresentando as sete áreas de prática da firma, a equipa e a localização com Google Maps integrado. Inclui um formulário de contacto para marcação de consultas com proteção contra spam.",
-      "de": "Website für André Lavouras Santos, Advogados — eine Anwaltskanzlei in Maia, Portugal, geführt von meinem Bruder. Erstellt mit einem React-Frontend und mehrsprachiger Unterstützung (Portugiesisch, Englisch, Deutsch), die die sieben Fachgebiete der Kanzlei, das Team und einen eingebetteten Google-Maps-Standort präsentiert. Enthält ein Kontaktformular zur Buchung von Beratungsgesprächen mit Spam-Schutz."
+      "en": "Website for André Lavouras Santos, Advogados, a law firm in Maia, Portugal run by my brother. Built with a React frontend and multilingual support (Portuguese, English, German), presenting the firm's seven practice areas, team, and an embedded Google Maps location. Includes a contact form for booking consultations with spam protection.",
+      "pt": "Website para André Lavouras Santos, Advogados, uma sociedade de advogados na Maia, Portugal, dirigida pelo meu irmão. Construído com um frontend React e suporte multilingue (português, inglês, alemão), apresentando as sete áreas de prática da firma, a equipa e a localização com Google Maps integrado. Inclui um formulário de contacto para marcação de consultas com proteção contra spam.",
+      "de": "Website für André Lavouras Santos, Advogados, eine Anwaltskanzlei in Maia, Portugal, geführt von meinem Bruder. Erstellt mit einem React-Frontend und mehrsprachiger Unterstützung (Portugiesisch, Englisch, Deutsch), die die sieben Fachgebiete der Kanzlei, das Team und einen eingebetteten Google-Maps-Standort präsentiert. Enthält ein Kontaktformular zur Buchung von Beratungsgesprächen mit Spam-Schutz."
     },
-    "technologies": ["JavaScript", "React", "HTML", "CSS", "i18n"],
+    "technologies": [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS",
+      "i18n"
+    ],
     "repoLink": null,
     "demoLink": "https://www.als-advogados.pt/",
     "category": "Personal",
@@ -129,7 +173,12 @@
       "pt": "Aplicação web voltada para clientes construída com React e uma camada de dados baseada em JSON (sem base de dados). Arquitetura leve focada em tempos de carregamento rápidos e fáceis atualizações de conteúdo, com integração CAPTCHA de terceiros para proteção contra spam em formulários.",
       "de": "Kundenorientierte Webanwendung, erstellt mit React und einer JSON-basierten Datenschicht (ohne Datenbank). Leichtgewichtige Architektur mit Fokus auf schnelle Ladezeiten und einfache Inhaltsaktualisierungen, mit Drittanbieter-CAPTCHA-Integration für Spam-Schutz auf Benutzerformularen."
     },
-    "technologies": ["JavaScript", "React", "HTML", "CSS"],
+    "technologies": [
+      "JavaScript",
+      "React",
+      "HTML",
+      "CSS"
+    ],
     "repoLink": null,
     "demoLink": "https://litho.ch/",
     "category": "Personal",
@@ -153,7 +202,14 @@
       "pt": "Aplicação em tempo real que traduz gestos de mãos em texto usando visão computacional. Treinei um modelo de ML personalizado para reconhecer sinais de mãos a partir de uma câmara web usando MediaPipe e OpenCV para deteção de pontos de referência.",
       "de": "Echtzeit-Anwendung, die Handgesten mithilfe von Computer Vision in Text umwandelt. Ein benutzerdefiniertes ML-Modell wurde trainiert, um Handzeichen aus einem Webcam-Feed mithilfe von MediaPipe und OpenCV zur Landmarken-Erkennung zu identifizieren."
     },
-    "technologies": ["Python", "OpenCV", "virtualenv", "CVZone", "NumPy", "MediaPipe"],
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "virtualenv",
+      "CVZone",
+      "NumPy",
+      "MediaPipe"
+    ],
     "repoLink": "https://github.com/DuarteSantos8/Hand-recognition",
     "demoLink": "",
     "category": "Personal",
@@ -165,13 +221,19 @@
     "images": []
   },
   {
-    "name": "Home Server — HP EliteDesk",
+    "name": "Home Server: HP EliteDesk",
     "description": {
       "en": "Self-hosted home lab running on an HP EliteDesk. Multiple websites live behind custom domains, exposed securely via Cloudflare Tunnel. Services run as isolated Docker containers behind an Nginx reverse proxy with automatic restart policies.",
       "pt": "Laboratório doméstico auto-hospedado a correr num HP EliteDesk. Múltiplos websites atrás de domínios personalizados, expostos de forma segura via Cloudflare Tunnel. Os serviços correm como contentores Docker isolados atrás de um reverse proxy Nginx com políticas de reinício automático.",
       "de": "Selbst gehostetes Heimlabor auf einem HP EliteDesk. Mehrere Websites hinter eigenen Domains, sicher über Cloudflare Tunnel exponiert. Dienste laufen als isolierte Docker-Container hinter einem Nginx Reverse Proxy mit automatischen Neustart-Richtlinien."
     },
-    "technologies": ["Linux", "Docker", "Nginx", "Bash", "Networking"],
+    "technologies": [
+      "Linux",
+      "Docker",
+      "Nginx",
+      "Bash",
+      "Networking"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Personal",
@@ -185,11 +247,16 @@
   {
     "name": "Arcade Machine",
     "description": {
-      "en": "Built a fully functional arcade machine from scratch as the Abschlussprojekt (final project) at Sekundarschule, earning a grade of 6 — the highest possible mark. Led a group of four: assigned responsibilities, sourced all materials, secured the workspace, and owned the project plan end-to-end. The build spanned carpentry, electronics wiring, and painting before a live presentation to the school.",
-      "pt": "Construí uma máquina arcade totalmente funcional do zero como Abschlussprojekt (projeto final) na Sekundarschule, obtendo nota 6 — a nota máxima possível. Liderança de um grupo de quatro: atribuição de responsabilidades, obtenção de todos os materiais, garantia do espaço de trabalho e gestão do plano de projeto de ponta a ponta. A construção incluiu carpintaria, ligações eletrónicas e pintura antes de uma apresentação ao vivo para a escola.",
-      "de": "Aufbau einer voll funktionsfähigen Arcade-Machine von Grund auf als Abschlussprojekt an der Sekundarschule mit der Note 6 — der höchstmöglichen Bewertung. Leitung einer vierköpfigen Gruppe: Aufgabenverteilung, Materialbeschaffung, Sicherung des Arbeitsplatzes und vollständige Verantwortung für den Projektplan. Der Bau umfasste Schreinerei, Elektronikverkabelung und Lackierung vor einer Live-Präsentation vor der Schule."
+      "en": "Built a fully functional arcade machine from scratch as the Abschlussprojekt (final project) at Sekundarschule, earning a grade of 6, the highest possible mark. Led a group of four: assigned responsibilities, sourced all materials, secured the workspace, and owned the project plan end-to-end. The build spanned carpentry, electronics wiring, and painting before a live presentation to the school.",
+      "pt": "Construí uma máquina arcade totalmente funcional do zero como Abschlussprojekt (projeto final) na Sekundarschule, obtendo nota 6, a nota máxima possível. Liderança de um grupo de quatro: atribuição de responsabilidades, obtenção de todos os materiais, garantia do espaço de trabalho e gestão do plano de projeto de ponta a ponta. A construção incluiu carpintaria, ligações eletrónicas e pintura antes de uma apresentação ao vivo para a escola.",
+      "de": "Aufbau einer voll funktionsfähigen Arcade-Machine von Grund auf als Abschlussprojekt an der Sekundarschule mit der Note 6, der höchstmöglichen Bewertung. Leitung einer vierköpfigen Gruppe: Aufgabenverteilung, Materialbeschaffung, Sicherung des Arbeitsplatzes und vollständige Verantwortung für den Projektplan. Der Bau umfasste Schreinerei, Elektronikverkabelung und Lackierung vor einer Live-Präsentation vor der Schule."
     },
-    "technologies": ["Woodworking", "Electronics", "Wiring", "Project Management"],
+    "technologies": [
+      "Woodworking",
+      "Electronics",
+      "Wiring",
+      "Project Management"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Personal",
@@ -218,7 +285,13 @@
       "pt": "Uma aplicação de pagamento móvel inspirada no Twint, desenvolvida como projeto escolar no BBC. Suporta envio e receção de dinheiro via pesquisa de utilizadores ou leitura de código QR, histórico de transações em tempo real, múltiplos tipos de conta (poupança, conta corrente, investimento), limites de gastos, gestão de perfil, modo escuro e localização em alemão, inglês e chinês. Construída com um frontend React Native e uma API REST Node.js/Express suportada por PostgreSQL.",
       "de": "Eine Twint-inspirierte mobile Zahlungs-App als Schulprojekt am BBC. Unterstützt das Senden und Empfangen von Geld per Benutzersuche oder QR-Code-Scan, Echtzeit-Transaktionshistorie, mehrere Kontotypen (Spar-, Giro-, Anlagekonto), Ausgabenlimits, Profilverwaltung, Dunkelmodus und Lokalisierung auf Deutsch, Englisch und Chinesisch. Erstellt mit einem React Native Frontend und einer Node.js/Express REST API mit PostgreSQL."
     },
-    "technologies": ["React Native", "Node.js", "JavaScript", "Firebase", "PostgreSQL"],
+    "technologies": [
+      "React Native",
+      "Node.js",
+      "JavaScript",
+      "Firebase",
+      "PostgreSQL"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Personal",
@@ -243,11 +316,15 @@
   {
     "name": "WeChat",
     "description": {
-      "en": "A WhatsApp-style mobile messaging app built for ÜK 335, earning a grade of 6 — the maximum. Uses email addresses instead of phone numbers for identity. Features account creation, direct messaging, group chats with a user list and leave option, profile customisation (username, bio, profile picture), and message deletion.",
-      "pt": "Uma aplicação de mensagens móvel estilo WhatsApp construída para o ÜK 335, obtendo nota 6 — o máximo. Usa endereços de e-mail em vez de números de telefone como identidade. Inclui criação de conta, mensagens diretas, conversas de grupo com lista de utilizadores e opção de saída, personalização de perfil (nome de utilizador, bio, foto de perfil) e eliminação de mensagens.",
-      "de": "Eine WhatsApp-ähnliche mobile Messaging-App für ÜK 335 mit der Note 6 — dem Maximum. Verwendet E-Mail-Adressen statt Telefonnummern als Identität. Funktionen: Kontoerstellung, Direktnachrichten, Gruppenchats mit Benutzerliste und Verlassoption, Profilanpassung (Benutzername, Bio, Profilbild) und Nachrichtenlöschung."
+      "en": "A WhatsApp-style mobile messaging app built for ÜK 335, earning a grade of 6 (the maximum). Uses email addresses instead of phone numbers for identity. Features account creation, direct messaging, group chats with a user list and leave option, profile customisation (username, bio, profile picture), and message deletion.",
+      "pt": "Uma aplicação de mensagens móvel estilo WhatsApp construída para o ÜK 335, obtendo nota 6 (o máximo). Usa endereços de e-mail em vez de números de telefone como identidade. Inclui criação de conta, mensagens diretas, conversas de grupo com lista de utilizadores e opção de saída, personalização de perfil (nome de utilizador, bio, foto de perfil) e eliminação de mensagens.",
+      "de": "Eine WhatsApp-ähnliche mobile Messaging-App für ÜK 335 mit der Note 6 (dem Maximum). Verwendet E-Mail-Adressen statt Telefonnummern als Identität. Funktionen: Kontoerstellung, Direktnachrichten, Gruppenchats mit Benutzerliste und Verlassoption, Profilanpassung (Benutzername, Bio, Profilbild) und Nachrichtenlöschung."
     },
-    "technologies": ["React Native", "Firebase", "JavaScript"],
+    "technologies": [
+      "React Native",
+      "Firebase",
+      "JavaScript"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Personal",
@@ -277,7 +354,15 @@
       "pt": "Liguei um módulo de câmara e sensor de movimento PIR a um Raspberry Pi 4. Quando é detetado movimento, a câmara tira uma fotografia e envia-a via bot do Telegram. O acesso remoto é gerido através do OpenVPN.",
       "de": "Ein Kameramodul und ein PIR-Bewegungssensor wurden an einen Raspberry Pi 4 angeschlossen. Bei Bewegungserkennung nimmt die Kamera ein Foto auf und sendet es über einen Telegram-Bot. Der Fernzugriff erfolgt über OpenVPN."
     },
-    "technologies": ["Python", "Raspberry Pi OS", "Raspberry Pi Camera Module", "PIR Motion Sensor", "RPi.GPIO", "Telegram Bot API", "OpenVPN"],
+    "technologies": [
+      "Python",
+      "Raspberry Pi OS",
+      "Raspberry Pi Camera Module",
+      "PIR Motion Sensor",
+      "RPi.GPIO",
+      "Telegram Bot API",
+      "OpenVPN"
+    ],
     "repoLink": null,
     "demoLink": "",
     "category": "Personal",
@@ -291,11 +376,23 @@
   {
     "name": "openGym",
     "description": {
-      "en": "A self-hosted gym and body-weight tracker you actually own. Plan a weekly routine from a library of 1,300+ exercises, run guided workouts with a rest timer and automatic PR detection (supersets and cardio included), and track your body weight and progress over time with an activity heatmap and muscle map. Installable as a PWA with passkey (Face ID / fingerprint) login, offline support, cross-device sync, and a 13-language interface — or as a standalone Android APK that keeps everything on the phone. All of it runs on your own server via Docker, with no accounts, subscriptions, or telemetry.",
-      "pt": "Um registo de treino e peso corporal auto-hospedado que é verdadeiramente teu. Planeia uma rotina semanal a partir de uma biblioteca de mais de 1300 exercícios, faz treinos guiados com temporizador de descanso e deteção automática de recordes (incluindo supersets e cardio), e acompanha o teu peso e progresso ao longo do tempo com um mapa de atividade e mapa muscular. Instalável como PWA com login por passkey (Face ID / impressão digital), suporte offline, sincronização entre dispositivos e interface em 13 idiomas — ou como APK Android autónomo que guarda tudo no telemóvel. Corre tudo no teu próprio servidor via Docker, sem contas, subscrições ou telemetria.",
-      "de": "Ein selbst gehosteter Gym- und Körpergewichts-Tracker, der wirklich dir gehört. Plane eine Wochenroutine aus einer Bibliothek mit über 1300 Übungen, absolviere geführte Workouts mit Pausen-Timer und automatischer PR-Erkennung (inklusive Supersätzen und Cardio) und verfolge dein Körpergewicht und deinen Fortschritt mit Aktivitäts-Heatmap und Muskelkarte. Installierbar als PWA mit Passkey-Login (Face ID / Fingerabdruck), Offline-Unterstützung, geräteübergreifender Synchronisation und Oberfläche in 13 Sprachen — oder als eigenständige Android-APK, die alles auf dem Handy behält. Alles läuft auf deinem eigenen Server via Docker, ohne Konten, Abonnements oder Telemetrie."
+      "en": "A self-hosted gym and body-weight tracker that people actually use: thousands of stars on GitHub, more than fifty contributors and a new release roughly every two weeks. Plan a fixed week or a rotation, train with a rest timer, supersets, progression rules and 1,300+ animated exercises, and see which muscles are trained, tired or neglected. Passkey or password sign-in, sync across devices, 18 languages, an optional AI coach and an MCP server for AI assistants. Runs on your own server with Docker, or as an Android app without any server at all.",
+      "pt": "Um registo de treino e peso corporal auto-hospedado que as pessoas usam mesmo: milhares de estrelas no GitHub, mais de cinquenta contribuidores e uma nova versão mais ou menos a cada duas semanas. Planeia uma semana fixa ou uma rotação, treina com temporizador de descanso, supersets, regras de progressão e mais de 1300 exercícios animados, e vê que músculos estão treinados, cansados ou esquecidos. Login com passkey ou palavra-passe, sincronização entre dispositivos, 18 idiomas, um coach de IA opcional e um servidor MCP para assistentes de IA. Corre no teu próprio servidor com Docker, ou como app Android sem servidor nenhum.",
+      "de": "Ein selbst gehosteter Gym- und Körpergewichts-Tracker, den Leute wirklich benutzen: tausende Sterne auf GitHub, über fünfzig Mitwirkende und etwa alle zwei Wochen ein neues Release. Plane eine feste Woche oder eine Rotation, trainiere mit Pausen-Timer, Supersätzen, Progressionsregeln und über 1300 animierten Übungen, und sieh, welche Muskeln trainiert, müde oder vernachlässigt sind. Login per Passkey oder Passwort, Sync zwischen Geräten, 18 Sprachen, ein optionaler KI-Coach und ein MCP-Server für KI-Assistenten. Läuft auf deinem eigenen Server mit Docker oder als Android-App ganz ohne Server."
     },
-    "technologies": ["React", "JavaScript", "Node.js", "Vite", "Docker", "Nginx", "WebAuthn", "PWA", "Capacitor", "Android"],
+    "technologies": [
+      "React",
+      "JavaScript",
+      "Node.js",
+      "Vite",
+      "Docker",
+      "Nginx",
+      "WebAuthn",
+      "PWA",
+      "Capacitor",
+      "Android",
+      "MCP"
+    ],
     "repoLink": "https://github.com/DuarteSantos8/openGym",
     "repoHost": "github",
     "starsRepo": "DuarteSantos8/openGym",
@@ -308,9 +405,57 @@
       "de": "Juli 2026 - Aktuell"
     },
     "images": [
-      "/assets/images/opengym/home.png",
-      "/assets/images/opengym/workout.png",
-      "/assets/images/opengym/stats.png"
+      "/assets/images/opengym/home-v1310.webp",
+      "/assets/images/opengym/workout-v1310.webp",
+      "/assets/images/opengym/stats-v1310.webp"
+    ],
+    "featured": true,
+    "highlights": {
+      "en": [
+        "50+ contributors",
+        "18 languages",
+        "Release every 2 weeks",
+        "Android app"
+      ],
+      "pt": [
+        "50+ contribuidores",
+        "18 idiomas",
+        "Versão a cada 2 semanas",
+        "App Android"
+      ],
+      "de": [
+        "50+ Mitwirkende",
+        "18 Sprachen",
+        "Release alle 2 Wochen",
+        "Android-App"
+      ]
+    }
+  },
+  {
+    "name": "AgentDeck",
+    "description": {
+      "en": "Browser terminals for my home server that don't die when the tab closes. Every session is a real tmux session, so a Claude Code agent or a long build keeps running through a closed laptop, a dropped VPN or a service restart, and I can pick it up again on my phone. Windows you can drag and maximise, a command palette, file upload and download, and a key bar for phones. One Node process, no build step, open source under MIT.",
+      "pt": "Terminais no browser para o meu servidor caseiro que não morrem quando fechas o separador. Cada sessão é uma sessão tmux a sério, por isso um agente Claude Code ou um build longo continua a correr com o portátil fechado, a VPN em baixo ou o serviço reiniciado, e posso retomá-lo no telemóvel. Janelas que se arrastam e maximizam, uma paleta de comandos, upload e download de ficheiros e uma barra de teclas para telemóvel. Um só processo Node, sem build, open source com licença MIT.",
+      "de": "Browser-Terminals für meinen Heimserver, die nicht sterben, wenn der Tab zugeht. Jede Sitzung ist eine echte tmux-Sitzung, also läuft ein Claude-Code-Agent oder ein langer Build weiter, auch wenn der Laptop zu ist, das VPN wegbricht oder der Dienst neu startet, und ich mache am Handy einfach weiter. Fenster zum Ziehen und Maximieren, eine Befehlspalette, Datei-Upload und -Download und eine Tastenleiste fürs Handy. Ein einziger Node-Prozess, kein Build-Schritt, Open Source unter MIT."
+    },
+    "technologies": [
+      "Node.js",
+      "JavaScript",
+      "Linux",
+      "Bash"
+    ],
+    "repoLink": "https://github.com/DuarteSantos8/agentdeck",
+    "repoHost": "github",
+    "starsRepo": "DuarteSantos8/agentdeck",
+    "category": "Personal",
+    "date": {
+      "en": "July 2026 - Present",
+      "pt": "Julho 2026 - Presente",
+      "de": "Juli 2026 - Aktuell"
+    },
+    "images": [
+      "/assets/images/agentdeck/banner.webp",
+      "/assets/images/agentdeck/sessions.webp"
     ]
   }
 ]
