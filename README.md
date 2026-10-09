@@ -55,7 +55,7 @@ Some of what's in there:
 
 | Project | What it is |
 |---|---|
-| [**openGym**](https://opengym.duarte-santos.ch/) | My main project: a self-hosted gym & body-weight tracker with thousands of GitHub stars, 50+ contributors and a release every two weeks. 1,300+ exercises, passkey or password login, 18 languages, an AI coach, MCP server and an Android app. Open source ([GitHub](https://github.com/DuarteSantos8/openGym)). |
+| [**openGym**](https://opengym.ch/) | My main project: a self-hosted gym & body-weight tracker with thousands of GitHub stars, 50+ contributors and a release every two weeks. 1,300+ exercises, passkey or password login, 18 languages, an AI coach, MCP server and an Android app. Open source ([GitHub](https://github.com/DuarteSantos8/openGym)). |
 | [**AgentDeck**](https://github.com/DuarteSantos8/agentdeck) | Browser terminals backed by tmux, so Claude Code agents and long jobs survive a closed tab, a dropped VPN or a restart. Open source (MIT). |
 | [**ALS Advogados**](https://www.als-advogados.pt/) | Multilingual website for a law firm in Maia, Portugal. |
 | [**Litho**](https://litho.ch/) | Client-facing React app on a JSON data layer, no database. |
