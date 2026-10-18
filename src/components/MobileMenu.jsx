@@ -16,12 +16,19 @@ const MobileMenu = () => {
   const toggleMenu = () => setIsOpen((o) => !o);
   const closeMenu = () => setIsOpen(false);
 
+  // Freeze the page behind the menu. overflow:hidden alone is ignored by iOS
+  // Safari, so pin the body in place and restore the scroll position on close.
   useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add('menu-open');
-    } else {
+    if (!isOpen) return;
+    const scrollY = window.scrollY;
+    const { style } = document.body;
+    document.body.classList.add('menu-open');
+    style.top = `-${scrollY}px`;
+    return () => {
       document.body.classList.remove('menu-open');
-    }
+      style.top = '';
+      window.scrollTo({ top: scrollY, behavior: 'instant' });
+    };
   }, [isOpen]);
 
   // Close on Escape while the menu is open.
@@ -84,6 +91,10 @@ const MobileMenu = () => {
 
           <div className="copyright-notice">
             {t.mobile.copyright(new Date().getFullYear())}
+            <div className="mobile-menu-legal">
+              <Link to="/impressum" onClick={closeMenu}>{t.footer.imprint}</Link>
+              <Link to="/datenschutz" onClick={closeMenu}>{t.footer.privacy}</Link>
+            </div>
           </div>
         </div>
       </div>

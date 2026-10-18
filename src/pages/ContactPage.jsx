@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
@@ -16,6 +17,7 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
+  const [consent, setConsent] = useState(false);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -87,6 +89,7 @@ const ContactPage = () => {
     ).then(() => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
+      setConsent(false);
       confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
       localStorage.setItem('lastMessageTime', new Date().getTime().toString());
       setTimeUntilNextMessage(600);
@@ -200,6 +203,21 @@ const ContactPage = () => {
                 </div>
               </div>
 
+              <label className="consent-check">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  required
+                  disabled={timerActive}
+                />
+                <span>
+                  {t.contact.consentPre}
+                  <Link to="/datenschutz" target="_blank">{t.contact.consentLink}</Link>
+                  {t.contact.consentPost}
+                </span>
+              </label>
+
               {timerActive ? (
                 <div className="rate-limit-notice">
                   <p>{t.contact.rateWait(formatTime(timeUntilNextMessage))}</p>
@@ -208,7 +226,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   className={`submit-button ${isSubmitting ? 'submitting' : ''}`}
-                  disabled={isSubmitting || timerActive}
+                  disabled={isSubmitting || timerActive || !consent}
                 >
                   {isSubmitting ? t.contact.sending : t.contact.send}
                 </button>

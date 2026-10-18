@@ -46,6 +46,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="copyright">{t.footer.copyright(new Date().getFullYear())}</div>
+          <div className="footer-legal">
+            <Link to="/impressum" className="footer-link">{t.footer.imprint}</Link>
+            <Link to="/datenschutz" className="footer-link">{t.footer.privacy}</Link>
+          </div>
           <div className="made-with">{t.footer.madeIn}</div>
         </div>
       </div>

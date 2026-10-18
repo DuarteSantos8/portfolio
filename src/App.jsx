@@ -12,6 +12,7 @@ import { ThemeProvider } from './context/ThemeContext.jsx';
 import { LanguageProvider } from './context/LanguageContext.jsx';
 import './App.css';
 import AboutPage from './pages/AboutPage';
+import LegalPage from './pages/LegalPage';
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/impressum" element={<LegalPage kind="imprint" />} />
+              <Route path="/datenschutz" element={<LegalPage kind="privacy" />} />
+              <Route path="/imprint" element={<LegalPage kind="imprint" />} />
+              <Route path="/privacy" element={<LegalPage kind="privacy" />} />
             </Routes>
           </main>
           <Footer />

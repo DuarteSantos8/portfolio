@@ -162,3 +162,11 @@
       text-align: center;
     }
   }
+.footer-legal {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-legal .footer-link {
+  font-size: 0.85rem;
+}

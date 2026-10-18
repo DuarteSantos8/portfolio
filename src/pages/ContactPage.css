@@ -416,3 +416,26 @@
 .dark-theme .char-counter {
   color: var(--text-secondary);
 }
+/* Privacy consent */
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--text-secondary);
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.consent-check input {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--text-primary);
+}
+
+.consent-check a {
+  color: var(--text-primary);
+  text-decoration: underline;
+}

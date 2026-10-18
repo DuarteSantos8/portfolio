@@ -4,7 +4,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     z-index: 1002;
+    overscroll-behavior: contain;
+    touch-action: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,8 +61,7 @@
     text-align: center;
     padding: 2rem;
     gap: 2rem;
-    overflow-y: auto;
-    max-height: 90vh;
+    max-height: 100dvh;
   }
 
   .mobile-menu-header {
@@ -213,6 +215,33 @@
 .copyright-notice {
     font-size: 0.8rem;
     opacity: 0.7;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
+}
+
+.mobile-menu-legal {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+}
+
+.mobile-menu-legal a {
+    color: inherit;
+}
+
+body.menu-open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+/* The menu doesn't scroll, so tighten it on short screens to keep everything visible. */
+@media (max-height: 720px) {
+    .mobile-menu-content { gap: 1.1rem; padding: 1rem; }
+    .memoji { width: 64px; height: 64px; }
+    .mobile-menu-header { gap: 0.5rem; }
+    .mobile-menu-header .mobile-menu-name { font-size: 1.8rem; }
+    .mobile-menu-links { gap: 1.1rem; }
+    .mobile-menu-links a { font-size: 1.5rem; }
 }
